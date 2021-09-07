@@ -37,7 +37,7 @@ dependencies {
     implementation "com.jakewharton:butterknife:10.2.1"
     implementation 'androidx.preference:preference:1.1.1'
     annotationProcessor "com.jakewharton:butterknife-compiler:10.2.1"
-    implementation 'com.github.jama5262:CarouselView:1.1.0'
+   // implementation 'com.github.jama5262:CarouselView:1.1.0'
     implementation 'com.squareup.retrofit2:retrofit:2.5.0'
     implementation 'com.squareup.retrofit2:converter-gson:2.5.0'
     implementation 'com.google.android.material:material:1.2.0'
@@ -50,16 +50,16 @@ dependencies {
     implementation 'com.daimajia.easing:library:1.0.1@aar'
     implementation 'com.android.support:multidex:1.0.3'
     implementation 'com.github.bumptech.glide:glide:4.11.0'
-    implementation 'com.github.salehyarahmadi:DataTable:v1.0.1'
+  //  implementation 'com.github.salehyarahmadi:DataTable:v1.0.1'
     implementation 'com.andrognito.pinlockview:pinlockview:2.1.0'
     implementation 'pl.droidsonroids.gif:android-gif-drawable:1.2.17'
     //For Circular ImageView
     implementation 'de.hdodenhof:circleimageview:3.0.0'
     implementation 'com.android.volley:volley:1.1.1'
-    implementation 'com.github.Shashank02051997:FancyToast-Android:0.1.8'
+   // implementation 'com.github.Shashank02051997:FancyToast-Android:0.1.8'
     implementation 'eu.giovannidefrancesco.sweetprefs:sweetprefs:1.0.1'
     implementation 'org.fabiomsr:moneytextview:1.1.0'
-    implementation 'com.github.sd6352051:NiftyDialogEffects:v1.0.3'
+    //implementation 'com.github.sd6352051:NiftyDialogEffects:v1.0.3'
     //Retrofit
     implementation 'com.daimajia.androidanimations:library:1.0.3@aar'
     implementation 'com.squareup.picasso:picasso:2.71828'
@@ -70,9 +70,9 @@ dependencies {
     implementation 'com.karumi:dexter:6.2.1'
     implementation 'com.google.code.gson:gson:2.8.5'
     implementation 'cc.cloudist.acplibrary:library:1.2.1'
-    implementation 'com.github.sadra:AwesomeSpinner:1.5.2'
+    //implementation 'com.github.sadra:AwesomeSpinner:1.5.2'
     implementation 'com.libizo:customedittext:1.0.6'
-    implementation 'com.github.tiper:MaterialSpinner:1.4.2'
+   // implementation 'com.github.tiper:MaterialSpinner:1.4.2'
     implementation 'com.github.vipulasri:timelineview:1.1.0'
     implementation 'androidx.vectordrawable:vectordrawable:1.1.0'
 
