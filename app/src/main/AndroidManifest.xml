@@ -8,13 +8,14 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.MKremit">
+        android:theme="@style/AppTheme">
         <activity
             android:name=".dashboard.DashboardActivity"
             android:exported="true" />
         <activity
             android:name=".splashscreen.SplashscreenActivity"
-            android:exported="true">
+            android:exported="true"
+            android:theme="@style/AppTheme.Onboarding">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -23,7 +24,8 @@
         </activity>
         <activity
             android:name=".loginutils.LoginActivity"
-            android:exported="true" />
+            android:exported="true"
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".MainActivity"
             android:exported="true">

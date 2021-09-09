@@ -1,16 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="purple_200">#FFBB86FC</color>
-    <color name="purple_500">#FF6200EE</color>
-    <color name="purple_700">#FF3700B3</color>
+    <color name="purple_200">#50C2C9</color>
+    <color name="purple_500">#50C2C9</color>
+    <color name="purple_700">#50C2C9</color>
     <color name="teal_200">#FF03DAC5</color>
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+
     <color name="colorPrimary">#0085ad</color>
     <color name="colorPrimaryDark">#004d73</color>
     <color name="colorAccent">#004d73</color>
     <color name="red">#ed1b24</color>
-<color name="colorGreen">#FF018786</color>
+
+
+    //onboarding colors
+    <color name="background">#F0F4F3</color>
+    <color name="buttontext">#50C2C9</color>
+
+    //indicator color
+    <color name="inactive">#C4C4C4</color>
+    <color name="active">#50C2C9</color>
+
+
+
+
     <color name="textPrimary">#212121</color>
     <color name="textSecondary">#8b8b8b</color>
     <string name="content_description">Content Description</string>
@@ -51,6 +65,7 @@
     <color name="primary">#3F51B5</color>
     <color name="primary_dark">#303F9F</color>
     <color name="accent">#FF4081</color>
+<!--    <color name="black">#000000</color>-->
 
     <color name="app_primary">#1976D2</color>
     <color name="app_primary_dark">#1565C0</color>
@@ -162,7 +177,7 @@
 
     <color name="btn_bg_checkout">#428bca</color>
     <color name="list_divider">#dedede</color>
-    <color name="white">#ffffff</color>
+<!--    <color name="white">#ffffff</color>-->
     <color name="lbl_product_name">#333333</color>
     <color name="lbl_product_description">#444444</color>
     <color name="bg_msg_you">#5eb964</color>
@@ -809,7 +824,7 @@
 
     <color name="text">#ffffff</color>
     <color name="shadow">#505050</color>
-    <color name="background">#2c1f1a</color>
+<!--    <color name="background">#2c1f1a</color>-->
     <color name="caption">#372721</color>
     <color name="copyright">#503b32</color>
     <color name="setting_devider">#503b32</color>
@@ -850,8 +865,5 @@
 
     <color name="gradient_start">#50000000</color>
     <color name="gradient_light_start">#30000000</color>
-
-
-
 
 </resources>
