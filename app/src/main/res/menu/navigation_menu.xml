@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/menuExplore"
+        android:icon="@drawable/ic_baseline_home_24"
+
+        android:title="Home" />
+
+
+    <item
+        android:id="@+id/menuSearch"
+        android:icon="@drawable/ic_baseline_compare_arrows_24"
+        android:title="Funding Request" />
+
+
+    <item
+        android:id="@+id/menuStar"
+        android:icon="@drawable/ic_baseline_supervised_user_circle_24"
+        android:title="Dealers" />
+
+    <item
+        android:id="@+id/menuAgent"
+        android:icon="@drawable/ic_baseline_accessibility_new_24"
+        android:title="Agents" />
+
+<!--    <item-->
+<!--        android:id="@+id/menuStar1"-->
+<!--        android:icon="@drawable/ic_baseline_star_24"-->
+<!--        android:title="@string/Profile" />-->
+
+
+</menu>

@@ -15,6 +15,9 @@
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
     </style>
+    <style name="Widget.BottomNavigationView" parent="Widget.Design.BottomNavigationView">
+
+    </style>
 
     <style name="AppTheme.Onboarding" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <!-- Primary brand color. -->

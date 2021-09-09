@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <item
+        android:id="@+id/tools"
+        android:title="ORDER CENTER">
+        <menu>
+
+            <item
+                android:id="@+id/nav_home"
+                android:icon="@drawable/new_home"
+                android:title="Home" />
+
+
+            <item
+                android:id="@+id/nav_gall"
+                android:icon="@drawable/shopping_basket"
+                android:title="Buy Airtime" />
+
+            <item
+                android:id="@+id/tracking"
+                android:icon="@drawable/pay"
+                android:title="Pay Bills" />
+
+
+            <item
+                android:id="@+id/send_parcel"
+                android:icon="@drawable/send_money"
+                android:title="Send Money" />
+            <item
+                android:id="@+id/list_send_parcel"
+                android:icon="@drawable/incomes"
+                android:title="Receive Money" />
+
+            <item
+                android:id="@+id/tracking_parcel"
+                android:icon="@drawable/creditcardspayment"
+                android:title="My cards" />
+
+
+            <item
+                android:id="@+id/faq"
+                android:icon="@drawable/information"
+                android:title="FAQ" />
+
+
+        </menu>
+    </item>
+
+    <item
+        android:id="@+id/auth"
+        android:title="AUTH">
+        <menu>
+
+            <item
+                android:id="@+id/nav_login"
+                android:icon="@drawable/helpsupport"
+                android:title="Help and Support" />
+
+            <item
+                android:id="@+id/nav_logout"
+                android:icon="@drawable/power_symbol"
+                android:title="Sign Out"
+                android:visible="false" />
+        </menu>
+    </item>
+
+</menu>

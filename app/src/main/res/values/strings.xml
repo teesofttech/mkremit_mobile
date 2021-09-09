@@ -21,5 +21,267 @@
     <string name="google_icon">Google</string>
     <string name="facebook_icon">Facebool</string>
     <string name="new_user_register_now">Create an account here</string>
+    <string name="airtime_data">Airtime</string>
+
+
+    <string name="action_settings">Settings</string>
+    <string name="view">View</string>
+    <string name="robotoBold">Roboto-Bold.ttf</string>
+    <string name="robotoRegular">Roboto-Regular.ttf</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="job">Job Updates</string>
+    <string name="username">UserName</string>
+    <string name="slide_1_title">Top-up your mobile data and airtime on the go</string>
+    <string name="slide_1_desc">A compatible and editable e-yearbook app available at any time, place or location.</string>
+    <string name="grp">Groups and Cliques</string>
+    <string name="Home">Home</string>
+    <string name="Admissions">Admissions</string>
+    <string name="Moments">Moments</string>
+    <string name="Yearbook">Yearbook</string>
+    <string name="Speeches">Speeches</string>
+    <string name="Adverts">Adverts</string>
+    <string name="Profile">Profile</string>
+    <string name="moyi">Moyi is a dynamic, social, and portable. E-Magazine App that connects Corp members during and after service.</string>
+    <string name="yearbook">My Yearbook</string>
+    <string name="front_matter">Front Matters</string>
+    <string name="admissions_news">Admission News</string>
+    <string name="golden_moment">Gallery</string>
+    <string name="schools">Schools</string>
+    <string name="increserment">Good Increserment</string>
+    <string name="findAFriend">Find A Friend</string>
+    <string name="welcome">Welcome Dear</string>
+    <string name="top_rated_movies_topic">Welcome </string>
+    <string name="login_welcome">Hello Again</string>
+    <string name="back_msg">Welcome back</string>
+    <string name="backdrop_title">Moments</string>
+    <string name="vip_title">VIP SECTION</string>
+    <string name="backdrop_subtitle">Enjoy the Moment of Mobile</string>
+    <string name="important">Access all the important personality</string>
+    <string name="title_activity_details">DetailsActivity</string>
+    <string name="tab_1">Label 1</string>
+    <string name="tab_2">Label 2</string>
+    <string name="tab_3">Label 3</string>
+    <string name="tab_4">Label 4</string>
+    <string name="tab_5">Label 5</string>
+    <string name="title_shop">Home</string>
+    <string name="title_gifts">Wallet</string>
+    <string name="title_cart">Service</string>
+    <string name="title_profile">Profile</string>
+    <string name="menu_1">Menu 1</string>
+    <string name="menu_2">Menu 2</string>
+    <string name="menu_3">Menu 3</string>
+
+    <string-array name="planets_array">
+        <item>Mercury</item>
+        <item>Venus</item>
+        <item>Earth</item>
+        <item>Mars</item>
+        <item>Jupiter</item>
+        <item>Saturn</item>
+        <item>Uranus</item>
+        <item>Neptune</item>
+    </string-array>
+
+
+    <string name="menu_4">Menu 4</string>
+    <string name="menu_5">Menu 5</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="full_name">Full Name</string>
+    <string name="by_signing_up_you_agree_to_our_b_terms_of_service_b_and_privacy_policy">By signing up you agree to our <strong>Terms of Service</strong> and Privacy Policy.</string>
+    <string name="create_an_account"><u>Create An Account</u></string>
+    <string name="requests_count_mock" translatable="false">5</string>
+    <string name="requests_count_badge" translatable="false">IMAGES</string>
+    <string name="weight_mock" translatable="false">50 oz</string>
+    <string name="weight_badge" translatable="false">VIDEOS</string>
+    <string name="pledge_mock" translatable="false">$150</string>
+    <string name="info">GET KNOWN a talent-based social networking site for creative minds to exhibit their portfolio of works, ideas, and thoughts by uploading images, videos, and write-ups on what makes them unique and sets them apart from others.</string>
+    <string name="pledge_badge" translatable="false">ARTICLES</string>
+    <string name="user_profile" translatable="false">USER PROFILE</string>
+    <string name="client_name_mock" translatable="false">Edward Norton</string>
+    <string name="rating_mock" translatable="false">(26)</string>
+    <string name="address" translatable="false">ADDRESS</string>
+    <string name="to_badge" translatable="false">TO</string>
+    <string name="unique_no" translatable="false">Unique Student No</string>
+    <string name="delivery_time_mock" translatable="false">6:30 pm</string>
+    <string name="delivery_date_mock" translatable="false">May 16, 2016</string>
+    <string name="deadline_badge" translatable="false">REQUEST DEADLINE</string>
+    <string name="deadline_time_mock" translatable="false">24 minutes</string>
+    <string name="request_btn_text" translatable="false">REQUEST</string>
+    <string name="btn_annotation_mock" translatable="false">5 people have sent a request</string>
+    <string name="content_from1_mock">W 90th St</string>
+    <string name="content_from2_mock">New York, NY 10025</string>
+    <string name="content_to1_mock">46th Ave</string>
+    <string name="content_to2_mock">Woodside, NY 11101</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="font_fontFamily_medium">sans-serif</string>
+    <string name="text_content">Book tickets of any transportation and travel the world!Book tickets of any transportation and travel the world!Book tickets of any transportation and travel the world!</string>
+    <string name="title_activity_friends_follower_tab_layout">FriendsFollowerTabLayout</string>
+    <string name="section_format">Hello World from section: %1$d</string>
+    <string name="title_activity_friends_followers_tab">FriendsFollowersTab</string>
+    <string name="register_Text">Register</string>
+    <string name="action_add_favourite">Add to Favourites</string>
+    <string name="action_play_next">Play Next</string>
+    <string name="title_activity_forgot_password">ForgotPassword</string>
+    <string name="title_activity_video_activty">VideoActivty</string>
+    <string name="hint_name">First Name</string>
+    <string name="lsatname">Last Name</string>
+    <string name="hint_email">Email</string>
+    <string name="hint_password">Password</string>
+    <string name="btn_sign_up">Sign Up</string>
+    <string name="err_msg_name">Enter your full name</string>
+    <string name="err_msg_email">Enter valid email address</string>
+    <string name="err_msg_password">Enter the password</string>
+    <string name="nav_drawer_title_profile"><u><b>PROFILE</b></u></string>
+    <string name="dashboard"><u><b>DASHBOARD</b></u></string>
+    <string name="video"><u><b>LATEST VIDEOS</b></u></string>
+    <string name="images"><u><b>LATEST IMAGES</b></u></string>
+    <string name="forum">Forum</string>
+    <string name="list"><u><b>LIST</b></u></string>
+    <string name="stories"><u><b>STORIES</b></u></string>
+    <string name="friends"><u><b>FRIENDS / FOLLOWERS LIST</b></u></string>
+    <string name="searchtest"><u><b>SEARCH</b></u></string>
+    <string name="submit">SUBMIT</string>
+    <string name="likes"><u><b>Likes</b></u></string>
+    <string name="comment"><u><b>Comment</b></u></string>
+    <string name="share"><u><b>Share</b></u></string>
+    <string name="title_activity_dynamic_user">DynamicUserActivity</string>
+    <string name="title_activity_faq">FAQ</string>
+    <string name="forget">Forget Password</string>
+    <string name="whatisgetknown">What is GET KNOWN?</string>
+    <string name="answer">GET KNOWN a talent-based social networking site for creative minds to exhibit their portfolio of works, ideas, and thoughts by uploading images, videos, and write-ups on what makes them unique and sets them apart from others.</string>
+    <string name="title_activity_notification_message">NotificationMessageActivity</string>
+    <string name="lorem_ipsum">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur magna tortor, semper eu feugiat eu, vehicula vitae lacus.</string>
+    <string name="facebook_app_id">622832051251514</string>
+    <string name="copy_right">Copyrights © %1$d</string>
+    <string name="remote_pdf_url">Remote PDF URL</string>
+    <string name="sample_pdf_url">http://web.getknown.absolat.com/PDFDirectory/alex.pdf</string>
+    <string name="download">Tap to start download</string>
+    <string name="asset_on_sd">Asset on SD card example</string>
+    <string name="asset_on_xml">Asset on XML example</string>
+    <string name="remote_pdf_example">Remote PDF Example</string>
+    <string name="action_search">Search</string>
+    <string name="title_activity_complete">CompleteActivity</string>
+    <string name="title_activity_facebook_reg">FacebookRegActivity</string>
+    <string name="edit_personal_info">Edit Personal Information</string>
+    <string name="edit_nok">Edit Next of Kin Information</string>
+    <string name="title_activity_maps">Map</string>
+    <string name="got_titletext">Who Will Ride The Third Dragon In \'Game Of Thrones\' Season 7?</string>
+    <string name="got_image_url">http://cdn.idigitaltimes.com/sites/idigitaltimes.com/files/styles/image_embed/public/2016/04/29/game-thrones-daenerys-dragon-drogon.jpg</string>
+    <string name="got_subtext">Game of Thrones season 7 will kick off a new age of Game of Thrones, with the show becoming a true epic fantasy for the first time. Don’t worry, it will remain a high political drama too, but the war between ice and fire isn’t far off now, and Daenerys Targaryen seems destined to lead the fight</string>
+    <string name="got_summarytext">You\'ve shown interest in Game of Thrones series</string>
+    <string name="apply">Apply</string>
+    <string name="saveforlater">Save for Later</string>
+    <string name="resources">Resource</string>
+    <string name="jobs">Job </string>
+    <string name="see_more">See more..</string>
+    <string name="nav_example2">Section with Header and Footer</string>
+
+
+    <string name="slide_3_title">Ready to explore?</string>
+    <string name="slide_3_desc">Not just a yearbook, Moyi E-yearbook app offers comprehensive resources on starting small and medium scale businesses, getting funds, job vacancies among others.</string>
+
+    <string name="slide_2_title">Connecting People</string>
+    <string name="slide_2_desc">Our mission is to connect corp members with the beautiful memories they shared together.</string>
+
+
+    <string name="world_topic">World</string>
+    <string name="biz_topic">Business</string>
+    <string name="tech_topic">Technology</string>
+    <string name="sports_topic">Sports</string>
+    <string name="title_activity_maps_dev">Map</string>
+    <string name="copy">Copyright &#169; 2017 MOYI Innovations LTD</string>
+
+    <string name="download_Pdf">Download pdf</string>
+    <string name="download_Doc">Download Doc</string>
+    <string name="download_zip">Download Zip</string>
+    <string name="download_video">Download Video</string>
+    <string name="download_mp3">Download MP3</string>
+    <string name="openFolder">Open Downloaded Folder</string>
+    <string name="downloadStarted">Download Started…</string>
+    <string name="downloadCompleted">Download Completed…</string>
+    <string name="downloadFailed">Download Failed…</string>
+    <string name="downloadAgain">Download Again</string>
+    <string name="sign_in">Sign In</string>
+    <string name="title_activity_registration">RegistrationActivity</string>
+    <string name="thanks_for_choosing_norte_express">Thanks for choosing IQIEPAY</string>
+    <string name="read_through_our_terms_and_condition">Read through our terms and condition</string>
+    <string name="faqs">FAQs</string>
+    <string name="read_through_our_faqs">Read through our FAQs</string>
+    <string name="version">Version</string>
+    <string name="terms_condition"><![CDATA[Terms & Condition]]></string>
+    <string name="read_through_our_privacy_policy">Read through our privacy policy</string>
+    <string name="privacy_policy">Privacy Policy</string>
+    <string name="support_norteexpress_ng">support@iqiepay.ng</string>
+    <string name="email_customer_care">Email Customer care</string>
+    <string name="call_customer_care">Call customer care</string>
+    <string name="would_you_like_to_tell_us_more_details">Would you like to tell us more details?</string>
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Password</string>
+    <string name="action_sign_in">Register</string>
+    <string name="action_sign_in_short">Sign in</string>
+    <string name="error_invalid_email">This email address is invalid</string>
+    <string name="error_invalid_password">This password is too short</string>
+    <string name="error_incorrect_password">This password is incorrect</string>
+    <string name="error_field_required">This field is required</string>
+    <string name="permission_rationale">"Contacts permissions are needed for providing email
+        completions."
+    </string>
+    <string name="title_activity_login2">Sign in 2</string>
+    <string name="title_activity_login3">Sign in 3</string>
+    <string name="title_activity_dashboard">DashboardActivity</string>
+    <string name="title_activity_super_dashboard">SuperDashboardActivity</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+
+    <string name="menu_home">Home</string>
+    <string name="menu_gallery">Gallery</string>
+    <string name="menu_slideshow">Slideshow</string>
+    <string name="menu_tools">Tools</string>
+    <string name="menu_share">Share</string>
+    <string name="menu_send">Send</string>
+    <string name="title_activity_main_utility">MainUtility</string>
+    <string name="title_activity_main">MainActivity</string>
+    <string name="transport_toll"><![CDATA[Transport & Toll]]></string>
+    <string name="title_activity_profile">ProfileActivity</string>
+    <string name="welcome_to_iqi_epay">Welcome to IQI-EPAY</string>
+    <string name="surname">Surname</string>
+    <string name="title_activity_agent_dashboard">AgentDashboardActivity</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+    <string name="reset_password">Reset password</string>
+    <string name="go_back_to_sign_in">Go back to Sign In.</string>
+    <string name="name">Name</string>
+    <string name="camera">Camera</string>
+    <string name="storage">Storage</string>
+    <string name="create_vendor">Create Vendor</string>
+    <string name="description">Description</string>
+    <string name="balance">Balance</string>
+    <string name="vendor_name">Vendor Name</string>
+    <string name="you_can_create_vendor_account_using_this_form_below">You can create vendor account using this form below.</string>
+    <string name="you_can_edit_your_account_profile">You can edit your account profile</string>
+    <string name="approve_manual_wallet_funding_request">Approve Manual Wallet Funding Request</string>
+    <string name="title_activity_wallet_information">WalletInformationActivity</string>
+
+    <!-- Preference Titles -->
+    <string name="messages_header">Messages</string>
+    <string name="sync_header">Sync</string>
+
+    <!-- Messages Preferences -->
+    <string name="signature_title">Your signature</string>
+    <string name="reply_title">Default reply action</string>
+
+    <!-- Sync Preferences -->
+    <string name="sync_title">Sync email periodically</string>
+    <string name="attachment_title">Download incoming attachments</string>
+    <string name="attachment_summary_on">Automatically download attachments for incoming emails
+    </string>
+    <string name="attachment_summary_off">Only download attachments when manually requested</string>
+
+    <string name="title_activity_super_dealer_master">SuperDealerMasterActivity</string>
+    <string name="title_activity_s_d_master">SDMasterActivity</string>
+    <string name="bluetooth_devices">Bluetooth Devices</string>
 
 </resources>

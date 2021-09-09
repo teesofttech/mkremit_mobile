@@ -17,6 +17,7 @@
         <entry key="app/src/main/res/drawable/round_border.xml" value="0.3260416666666667" />
         <entry key="app/src/main/res/drawable/wave.xml" value="0.25" />
         <entry key="app/src/main/res/font/poppins.xml" value="0.31296296296296294" />
+        <entry key="app/src/main/res/layout/activity_dashboard.xml" value="0.2953125" />
         <entry key="app/src/main/res/layout/activity_login.xml" value="0.3098958333333333" />
         <entry key="app/src/main/res/layout/activity_mainscreen.xml" value="0.2953125" />
         <entry key="app/src/main/res/layout/activity_splashscreen.xml" value="0.25364583333333335" />
@@ -26,6 +27,10 @@
         <entry key="app/src/main/res/layout/walkthrough4_page2.xml" value="0.25364583333333335" />
         <entry key="app/src/main/res/layout/walkthrough4_page3.xml" value="0.25364583333333335" />
         <entry key="app/src/main/res/layout/walkthrough4_page4.xml" value="0.25364583333333335" />
+        <entry key="app/src/main/res/menu/home_menu.xml" value="0.1578125" />
+        <entry key="app/src/main/res/menu/log.xml" value="0.2953125" />
+        <entry key="app/src/main/res/menu/menu_main.xml" value="0.1578125" />
+        <entry key="app/src/main/res/menu/super_dealer_menu.xml" value="0.2953125" />
       </map>
     </option>
   </component>
