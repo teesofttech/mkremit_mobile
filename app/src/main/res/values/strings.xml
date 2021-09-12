@@ -192,6 +192,9 @@
     <string name="title_activity_maps_dev">Map</string>
     <string name="copy">Copyright &#169; 2017 MOYI Innovations LTD</string>
 
+    <string name="login_email_hint">Email</string>
+    <string name="login_password_hint">Password</string>
+
     <string name="download_Pdf">Download pdf</string>
     <string name="download_Doc">Download Doc</string>
     <string name="download_zip">Download Zip</string>

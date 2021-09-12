@@ -8,8 +8,8 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
 
-    <color name="colorPrimary">#0085ad</color>
-    <color name="colorPrimaryDark">#004d73</color>
+    <color name="colorPrimary">#44883e</color>
+    <color name="colorPrimaryDark">#44883e</color>
     <color name="colorAccent">#004d73</color>
     <color name="red">#ed1b24</color>
 
@@ -67,13 +67,20 @@
     <color name="accent">#FF4081</color>
 <!--    <color name="black">#000000</color>-->
 
-    <color name="app_primary">#1976D2</color>
+    <color name="app_primary">#44883e</color>
     <color name="app_primary_dark">#1565C0</color>
     <color name="grey">#DDDDDD</color>
     <color name="light_grey">#EEEEEE</color>
     <color name="white_transparent">#99FFFFFF</color>
     <color name="dark_grey">#484547</color>
 
+
+    <color name="themeColor">#44883e</color>
+    <color name="darkTextColor">#020000</color>
+    <color name="contentTextColor">#020000</color>
+    <color name="register_bk_color">#44883e</color>
+    <color name="login_bk_color">#fff</color>
+    <color name="primaryTextColor">#44883e</color>
 
     <color name="colorBlack">#555555</color>
     <color name="colorWhite">#FFFFFF</color>

@@ -161,5 +161,7 @@
     <dimen name="comment_avatar_size">56dp</dimen>
     <dimen name="publish_photo_thumbnail_size">96dp</dimen>
 
-
+<!--    <dimen name="headerTextSize">25sp</dimen>-->
+    <dimen name="newsMoreTextSize">16sp</dimen>
+    <dimen name="loginViewsMargin">20dp</dimen>
 </resources>

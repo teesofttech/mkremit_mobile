@@ -8,29 +8,45 @@
         <entry key="app/src/main/res/drawable/blue_ring.xml" value="0.14635416666666667" />
         <entry key="app/src/main/res/drawable/blue_rounded_bg.xml" value="0.14635416666666667" />
         <entry key="app/src/main/res/drawable/btn_bg.xml" value="0.2638888888888889" />
+        <entry key="app/src/main/res/drawable/button_background_blue.xml" value="0.321025641025641" />
         <entry key="app/src/main/res/drawable/button_raidus.xml" value="0.14635416666666667" />
         <entry key="app/src/main/res/drawable/dash_line.xml" value="0.14635416666666667" />
         <entry key="app/src/main/res/drawable/edit_text_light_grey_rounded.xml" value="0.14635416666666667" />
+        <entry key="app/src/main/res/drawable/ic_add_img.xml" value="0.26979166666666665" />
+        <entry key="app/src/main/res/drawable/ic_back_img.xml" value="0.321025641025641" />
         <entry key="app/src/main/res/drawable/ic_email.xml" value="0.3260416666666667" />
+        <entry key="app/src/main/res/drawable/ic_facebook.xml" value="0.321025641025641" />
         <entry key="app/src/main/res/drawable/ic_lock.xml" value="0.3260416666666667" />
+        <entry key="app/src/main/res/drawable/ic_login_hero.xml" value="0.31145833333333334" />
+        <entry key="app/src/main/res/drawable/ic_side_bg.xml" value="0.321025641025641" />
         <entry key="app/src/main/res/drawable/round_bg.xml" value="0.3260416666666667" />
         <entry key="app/src/main/res/drawable/round_border.xml" value="0.3260416666666667" />
+        <entry key="app/src/main/res/drawable/rounded.xml" value="0.26979166666666665" />
+        <entry key="app/src/main/res/drawable/shape.xml" value="0.31145833333333334" />
         <entry key="app/src/main/res/drawable/wave.xml" value="0.25" />
         <entry key="app/src/main/res/font/poppins.xml" value="0.31296296296296294" />
+        <entry key="app/src/main/res/layout/activity_authenticate_pin.xml" value="0.3098958333333333" />
         <entry key="app/src/main/res/layout/activity_dashboard.xml" value="0.2953125" />
-        <entry key="app/src/main/res/layout/activity_login.xml" value="0.3098958333333333" />
+        <entry key="app/src/main/res/layout/activity_forgot_password.xml" value="0.3098958333333333" />
+        <entry key="app/src/main/res/layout/activity_login.xml" value="0.335" />
         <entry key="app/src/main/res/layout/activity_mainscreen.xml" value="0.2953125" />
+        <entry key="app/src/main/res/layout/activity_register.xml" value="0.3098958333333333" />
+        <entry key="app/src/main/res/layout/activity_set_pin.xml" value="0.3098958333333333" />
         <entry key="app/src/main/res/layout/activity_splashscreen.xml" value="0.25364583333333335" />
+        <entry key="app/src/main/res/layout/scr2.xml" value="0.25364583333333335" />
         <entry key="app/src/main/res/layout/slide_screen.xml" value="0.25364583333333335" />
         <entry key="app/src/main/res/layout/slider_layout.xml" value="0.2953125" />
+        <entry key="app/src/main/res/layout/test3.xml" value="0.25364583333333335" />
+        <entry key="app/src/main/res/layout/test4.xml" value="0.25" />
         <entry key="app/src/main/res/layout/walkthrough4_page1.xml" value="0.25364583333333335" />
         <entry key="app/src/main/res/layout/walkthrough4_page2.xml" value="0.25364583333333335" />
         <entry key="app/src/main/res/layout/walkthrough4_page3.xml" value="0.25364583333333335" />
         <entry key="app/src/main/res/layout/walkthrough4_page4.xml" value="0.25364583333333335" />
         <entry key="app/src/main/res/menu/home_menu.xml" value="0.1578125" />
         <entry key="app/src/main/res/menu/log.xml" value="0.2953125" />
-        <entry key="app/src/main/res/menu/menu_main.xml" value="0.1578125" />
+        <entry key="app/src/main/res/menu/menu_main.xml" value="0.25" />
         <entry key="app/src/main/res/menu/super_dealer_menu.xml" value="0.2953125" />
+        <entry key="app/src/main/res/xml/root_preferences.xml" value="0.2953125" />
       </map>
     </option>
   </component>

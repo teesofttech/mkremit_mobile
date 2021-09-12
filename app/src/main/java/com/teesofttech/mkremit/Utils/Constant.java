@@ -7,16 +7,17 @@ package com.teesofttech.mkremit.Utils;
 public class Constant {
     public static String Base() {
 
-        return "https://iqpay.com.ng/api/";
+        return "http://api.mkremit.com/api/";
     }
 
     public static String Base2() {
 
-        return "https://iqpay.com.ng/";
+        return "http://api.mkremit.com/";
     }
+
     public static String Base3() {
 
-        return "https://iqpay.com.ng";
+        return "http://api.mkremit.com";
     }
 
     public static String FAILED = "";
@@ -26,7 +27,7 @@ public class Constant {
     public static String EmptyMessage = "Please all the empty(s) !!!";
     public static String GET_CATEGORIES = Constant.Base() + "service-types/";
     public static String REGISTER_AGENT = Constant.Base() + "users/create-agent";
-    public static String REGISTER = Constant.Base() + "users/signup";
+    public static String REGISTER = Constant.Base() + "user/register";
     public static String LOGIN = Constant.Base() + "users/authenticate";
     public static String SUPER_REGISTER_DEALER = Constant.Base() + "users/create-dealer";
     public static String SUPER_REGISTER_SUPERDEALER = Constant.Base() + "users/create-superdealer";
