@@ -28,7 +28,7 @@ public class Constant {
     public static String GET_CATEGORIES = Constant.Base() + "service-types/";
     public static String REGISTER_AGENT = Constant.Base() + "users/create-agent";
     public static String REGISTER = Constant.Base() + "user/register";
-    public static String LOGIN = Constant.Base() + "users/authenticate";
+    public static String LOGIN = Constant.Base() + "user/login";
     public static String SUPER_REGISTER_DEALER = Constant.Base() + "users/create-dealer";
     public static String SUPER_REGISTER_SUPERDEALER = Constant.Base() + "users/create-superdealer";
     public static String DEALER_LIST = Constant.Base() + "dealers";

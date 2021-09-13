@@ -128,7 +128,7 @@ public class LoginActivity extends AppCompatActivity {
                     JSONObject params = new JSONObject();
 
                     try {
-                        params.put("username", username.getText().toString().trim());
+                        params.put("email", username.getText().toString().trim());
                         params.put("password", password.getText().toString().trim());
                     } catch (JSONException e) {
                         e.printStackTrace();
@@ -146,14 +146,14 @@ public class LoginActivity extends AppCompatActivity {
                                         String statusCode = response.getString("statusCode");
                                         Log.d("stat", statusCode);
                                         if (statusCode.equals("200")) {
-                                            // alertDialogManager.showAlertDialog(LoginActivity.this, "success", "Account has been created successfully, a mail has been sent to your email address to validate your email address", true);
-                                            JSONObject content = response.getJSONObject("content");
+                                            //alertDialogManager.showAlertDialog(LoginActivity.this, "success", "Account has been created successfully, a mail has been sent to your email address to validate your email address", true);
+                                            JSONObject content = response.getJSONObject("data");
                                             UserModel userModel = new UserModel();
                                             if (content != null) {
                                                 userModel.setEmail(content.getString("email"));
-                                                userModel.setFirstName(content.getString("firstname"));
-                                                userModel.setLastName(content.getString("lastname"));
-                                                userModel.setId(String.valueOf(content.getString("userId")));
+                                                userModel.setFirstName(content.getString("firstName"));
+                                                userModel.setLastName(content.getString("lastName"));
+                                                userModel.setId(String.valueOf(content.getString("id")));
                                                 userModel.setDealerCode(username.getText().toString().trim());
                                             } //set pin code first
                                             PrefUtils.setCurrentUser(userModel, LoginActivity.this);
@@ -180,8 +180,8 @@ public class LoginActivity extends AppCompatActivity {
                             }, new Response.ErrorListener() {
                         @Override
                         public void onErrorResponse(VolleyError error) {
-                            Toast.makeText(LoginActivity.this, "Error occurred while vending", Toast.LENGTH_LONG).show();
-                            VolleyLog.d("TAGGG", "Error: " + error.getMessage());
+                            //Toast.makeText(LoginActivity.this, "Error occurred while vending", Toast.LENGTH_LONG).show();
+                            // VolleyLog.d("TAGGG", "Error: " + error.getMessage());
                             // As of f605da3 the following should work
                             waitingDialog.dismiss();
                             NetworkResponse response = error.networkResponse;
