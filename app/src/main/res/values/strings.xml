@@ -286,5 +286,8 @@
     <string name="title_activity_super_dealer_master">SuperDealerMasterActivity</string>
     <string name="title_activity_s_d_master">SDMasterActivity</string>
     <string name="bluetooth_devices">Bluetooth Devices</string>
+    <string name="amount">Amount</string>
+    <string name="continue1">Continue</string>
+    <string name="phone_number">Phone Number</string>
 
 </resources>
