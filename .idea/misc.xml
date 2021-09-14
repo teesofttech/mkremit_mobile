@@ -28,14 +28,16 @@
         <entry key="app/src/main/res/drawable/shape.xml" value="0.31145833333333334" />
         <entry key="app/src/main/res/drawable/wave.xml" value="0.25" />
         <entry key="app/src/main/res/font/poppins.xml" value="0.31296296296296294" />
+        <entry key="app/src/main/res/layout/activity_airtime.xml" value="0.335" />
         <entry key="app/src/main/res/layout/activity_authenticate_pin.xml" value="0.3098958333333333" />
-        <entry key="app/src/main/res/layout/activity_dashboard.xml" value="0.335" />
+        <entry key="app/src/main/res/layout/activity_dashboard.xml" value="0.25" />
         <entry key="app/src/main/res/layout/activity_forgot_password.xml" value="0.3098958333333333" />
         <entry key="app/src/main/res/layout/activity_login.xml" value="0.335" />
         <entry key="app/src/main/res/layout/activity_mainscreen.xml" value="0.2953125" />
         <entry key="app/src/main/res/layout/activity_register.xml" value="0.3098958333333333" />
         <entry key="app/src/main/res/layout/activity_set_pin.xml" value="0.3098958333333333" />
         <entry key="app/src/main/res/layout/activity_splashscreen.xml" value="0.25364583333333335" />
+        <entry key="app/src/main/res/layout/custom_actionbar.xml" value="0.2953125" />
         <entry key="app/src/main/res/layout/scr2.xml" value="0.25364583333333335" />
         <entry key="app/src/main/res/layout/slide_screen.xml" value="0.25364583333333335" />
         <entry key="app/src/main/res/layout/slider_layout.xml" value="0.2953125" />

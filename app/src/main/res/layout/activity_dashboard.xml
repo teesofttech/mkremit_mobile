@@ -17,30 +17,6 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:padding="10dp">
-
-                <RelativeLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="5dp">
-
-                    <TextView
-                        android:id="@+id/time_of_day"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:textColor="@color/colorPrimary"
-                        android:textSize="14dp" />
-
-
-                </RelativeLayout>
-
-
-            </LinearLayout>
-
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -207,10 +183,9 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center"
-
                                 android:gravity="center"
                                 android:padding="2dp"
-                                android:text="E-Pins"
+                                android:text="Education"
                                 android:textColor="@color/colorPrimaryDark"
                                 android:textSize="14sp"
                                 android:textStyle="bold" />
@@ -350,6 +325,7 @@
                                 android:textStyle="bold" />
 
                         </LinearLayout>
+
                     </LinearLayout>
 
 
@@ -447,7 +423,7 @@
 
                                 android:gravity="center"
                                 android:padding="2dp"
-                                android:text="Funding History Report"
+                                android:text="Funding History"
                                 android:textColor="@color/colorPrimaryDark"
                                 android:textSize="14sp"
                                 android:textStyle="bold" />

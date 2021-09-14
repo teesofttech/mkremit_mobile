@@ -4,28 +4,23 @@
     <item
         android:id="@+id/menuExplore"
         android:icon="@drawable/ic_baseline_home_24"
-
-        android:title="Home" />
+        android:title="HOME" />
 
     <item
         android:id="@+id/menuSearch"
         android:icon="@drawable/ic_baseline_compare_arrows_24"
-        android:title="Funding Request" />
+        android:title="BILLS" />
 
-
-<!--    <item-->
-<!--        android:id="@+id/menuStar"-->
-<!--        android:icon="@drawable/ic_baseline_supervised_user_circle_24"-->
-<!--        android:title="Agents" />-->
-<!--    <item-->
-    <!--        android:id="@+id/menuStar2"-->
-    <!--        android:icon="@drawable/ic_account_circle_black_24dp"-->
-    <!--        android:title="Dealer" />-->
 
     <item
         android:id="@+id/menuStar1"
         android:icon="@drawable/ic_baseline_account_balance_24"
-        android:title="Report" />
+        android:title="HISTORY" />
+
+    <item
+        android:id="@+id/menuStar2"
+        android:icon="@drawable/ic_baseline_account_balance_24"
+        android:title="ACCOUNT" />
 
 
 </menu>

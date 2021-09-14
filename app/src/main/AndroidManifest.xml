@@ -31,6 +31,9 @@
         tools:ignore="GoogleAppIndexingWarning"
         tools:targetApi="m">
         <activity
+            android:name=".airtimeutils.AirtimeActivity"
+            android:exported="true" />
+        <activity
             android:name=".auth.SetPinActivity"
             android:exported="true"
             android:theme="@style/AppTheme.Onboarding" />
