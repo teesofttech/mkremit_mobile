@@ -1,26 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="purple_200">#50C2C9</color>
-    <color name="purple_500">#50C2C9</color>
-    <color name="purple_700">#50C2C9</color>
-    <color name="teal_200">#FF03DAC5</color>
-    <color name="teal_700">#FF018786</color>
+    <color name="purple_200">#44883e</color>
+    <color name="purple_500">#44883e</color>
+    <color name="purple_700">#44883e</color>
+    <color name="teal_200">#44883e</color>
+    <color name="teal_700">#44883e</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
 
     <color name="colorPrimary">#44883e</color>
     <color name="colorPrimaryDark">#44883e</color>
-    <color name="colorAccent">#004d73</color>
+    <color name="colorAccent">#43bd42</color>
     <color name="red">#ed1b24</color>
-
+    <color name="black_shade">#666666</color>
 
     //onboarding colors
     <color name="background">#F0F4F3</color>
-    <color name="buttontext">#50C2C9</color>
+    <color name="buttontext">#44883e</color>
 
     //indicator color
     <color name="inactive">#C4C4C4</color>
-    <color name="active">#50C2C9</color>
+    <color name="active">#44883e</color>
 
 
 
@@ -38,7 +38,7 @@
     <color name="ecommerce25fontGray">#9e9e9e</color>
     <color name="navigationBarColor">#000000</color>
     <color name="back">#222d32</color>
-    <color name="button_green">#43bd42</color>
+    <color name="button_green">#44883e</color>
     <color name="from">#000000</color>
     <color name="subject">#111111</color>
     <color name="extraTextlightSplitterGray">#70dfdfdf</color>
@@ -68,7 +68,7 @@
 <!--    <color name="black">#000000</color>-->
 
     <color name="app_primary">#44883e</color>
-    <color name="app_primary_dark">#1565C0</color>
+    <color name="app_primary_dark">#44883e</color>
     <color name="grey">#DDDDDD</color>
     <color name="light_grey">#EEEEEE</color>
     <color name="white_transparent">#99FFFFFF</color>
@@ -212,9 +212,9 @@
     <color name="album_title">#4c4c4c</color>
 
 
-    <color name="style_color_primary">#2d5d82</color>
-    <color name="style_color_primary_dark">#21425d</color>
-    <color name="style_color_accent">#01bcd5</color>
+    <color name="style_color_primary">#43bd42</color>
+    <color name="style_color_primary_dark">#43bd42</color>
+    <color name="style_color_accent">#43bd42</color>
 
     <color name="fab_color_pressed">#007787</color>
     <color name="fab_color_shadow">#44000000</color>

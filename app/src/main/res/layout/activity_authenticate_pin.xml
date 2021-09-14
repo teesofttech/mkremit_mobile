@@ -1,14 +1,34 @@
 <?xml version="1.0" encoding="utf-8"?>
-<com.hanks.passcodeview.PasscodeView xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/passcodeView"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="?attr/colorPrimary"
-    app:correctStateColor="#71bb4d"
-    app:firstInputTip="Enter a passcode of 4 digits "
-    app:normalStateColor="#ffffff"
-    app:numberTextColor="#222222"
-    app:passcodeLength="4"
-    app:passcodeViewType="check_passcode"
-    app:wrongStateColor="#ea2b46" />
+    android:gravity="center"
+    android:orientation="vertical">
+
+    <ImageView
+        android:layout_width="50.0dp"
+        android:layout_height="50.0dp"
+        android:src="@drawable/lock" />
+
+    <TextView
+        android:id="@+id/promptview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:padding="20.0dp"
+        android:text="Enter your passcode"
+        android:textSize="18.0sp" />
+
+    <in.arjsna.passcodeview.PassCodeView
+        android:id="@+id/pass_code_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="25.0dp"
+        app:digit_size="30.0dp"
+        app:digits="4"
+        app:empty_drawable="@drawable/empty_dot"
+        app:filled_drawable="@drawable/filled_dot"
+        app:key_text_size="30.0sp" />
+
+</LinearLayout>

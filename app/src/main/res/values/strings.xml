@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Onboarding</string>
+    <string name="app_name">MKRemit</string>
 
     //Headings
     <string name="heading_one">Quick &amp; Easy Payments</string>

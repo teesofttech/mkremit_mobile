@@ -62,7 +62,7 @@ dependencies {
     implementation 'org.fabiomsr:moneytextview:1.1.0'
     //implementation 'com.github.sd6352051:NiftyDialogEffects:v1.0.3'
     //Retrofit
-    implementation 'com.hanks:passcodeview:0.1.2'
+    implementation 'in.arjsna:passcodeview:1.2.1'
     implementation 'com.daimajia.androidanimations:library:1.0.3@aar'
     implementation 'com.squareup.picasso:picasso:2.71828'
     implementation 'com.nineoldandroids:library:2.4.0'
