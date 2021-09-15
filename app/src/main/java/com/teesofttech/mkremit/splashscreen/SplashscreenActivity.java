@@ -76,7 +76,7 @@ public class SplashscreenActivity extends AppCompatActivity {
             public void onClick(View v) {
 
 
-                Intent i = new Intent(SplashscreenActivity.this, mainscreen.class);
+                Intent i = new Intent(SplashscreenActivity.this, LoginActivity.class);
                 startActivity(i);
                 finish();
 

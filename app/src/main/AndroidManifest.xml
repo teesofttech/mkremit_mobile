@@ -31,6 +31,12 @@
         tools:ignore="GoogleAppIndexingWarning"
         tools:targetApi="m">
         <activity
+            android:name=".datautils.InternetDataActivity"
+            android:exported="true" />
+        <activity
+            android:name=".airtimeutils.PreviewActivity"
+            android:exported="true" />
+        <activity
             android:name=".airtimeutils.AirtimeActivity"
             android:exported="true" />
         <activity

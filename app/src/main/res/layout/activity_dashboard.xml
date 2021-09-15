@@ -125,7 +125,7 @@
                                 android:padding="2dp"
                                 android:text="@string/airtime_data"
                                 android:textColor="@color/colorPrimaryDark"
-                                android:textSize="14sp"
+                                android:textSize="16sp"
                                 android:textStyle="bold" />
 
                         </LinearLayout>
@@ -156,7 +156,7 @@
                                 android:padding="2dp"
                                 android:text="Data"
                                 android:textColor="@color/colorPrimaryDark"
-                                android:textSize="14sp"
+                                android:textSize="16sp"
                                 android:textStyle="bold" />
 
                         </LinearLayout>
@@ -187,7 +187,7 @@
                                 android:padding="2dp"
                                 android:text="Education"
                                 android:textColor="@color/colorPrimaryDark"
-                                android:textSize="14sp"
+                                android:textSize="16sp"
                                 android:textStyle="bold" />
 
                         </LinearLayout>
@@ -227,7 +227,7 @@
                                 android:padding="2dp"
                                 android:text="Electricity"
                                 android:textColor="@color/colorPrimaryDark"
-                                android:textSize="14sp"
+                                android:textSize="16sp"
                                 android:textStyle="bold" />
 
                         </LinearLayout>
@@ -259,7 +259,7 @@
                                 android:padding="2dp"
                                 android:text="Cable TV"
                                 android:textColor="@color/colorPrimaryDark"
-                                android:textSize="14sp"
+                                android:textSize="16sp"
                                 android:textStyle="bold" />
 
                         </LinearLayout>
@@ -321,7 +321,7 @@
                                 android:padding="2dp"
                                 android:text="Transaction"
                                 android:textColor="@color/colorPrimaryDark"
-                                android:textSize="14sp"
+                                android:textSize="16sp"
                                 android:textStyle="bold" />
 
                         </LinearLayout>
@@ -363,7 +363,7 @@
                                 android:padding="2dp"
                                 android:text="Wallet"
                                 android:textColor="@color/colorPrimaryDark"
-                                android:textSize="14sp"
+                                android:textSize="16sp"
                                 android:textStyle="bold" />
 
                         </LinearLayout>
@@ -394,7 +394,7 @@
                                 android:padding="2dp"
                                 android:text="Profile"
                                 android:textColor="@color/colorPrimaryDark"
-                                android:textSize="14sp"
+                                android:textSize="16sp"
                                 android:textStyle="bold" />
 
                         </LinearLayout>
@@ -425,7 +425,7 @@
                                 android:padding="2dp"
                                 android:text="Funding History"
                                 android:textColor="@color/colorPrimaryDark"
-                                android:textSize="14sp"
+                                android:textSize="16sp"
                                 android:textStyle="bold" />
 
                         </LinearLayout>

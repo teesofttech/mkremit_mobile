@@ -1,10 +1,13 @@
 package com.teesofttech.mkremit.auth;
 
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.graphics.Typeface;
 import android.os.Bundle;
+import android.view.Gravity;
+import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -24,6 +27,24 @@ public class SetPinActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_set_pin);
+
+        final ActionBar abar = getSupportActionBar();
+        View viewActionBar = getLayoutInflater().inflate(R.layout.custom_bar, null);
+        ActionBar.LayoutParams params = new ActionBar.LayoutParams(//Center the textview in the ActionBar !
+                ActionBar.LayoutParams.WRAP_CONTENT,
+                ActionBar.LayoutParams.MATCH_PARENT,
+                Gravity.CENTER);
+        TextView txttitle = (TextView) viewActionBar.findViewById(R.id.txtTitle);
+        txttitle.setText("S E T  P I N");
+        txttitle.setTextSize(14);
+        if (abar != null) {
+            abar.setCustomView(viewActionBar, params);
+
+            abar.setDisplayShowCustomEnabled(true);
+            abar.setDisplayShowTitleEnabled(false);
+            abar.setHomeButtonEnabled(false);
+        }
+
 
         passCodeView = (PassCodeView) findViewById(R.id.pass_code_view);
         TextView promptView = (TextView) findViewById(R.id.promptview);

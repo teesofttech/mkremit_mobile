@@ -12,6 +12,7 @@ import android.widget.TextView;
 
 import com.teesofttech.mkremit.R;
 import com.teesofttech.mkremit.airtimeutils.AirtimeActivity;
+import com.teesofttech.mkremit.datautils.InternetDataActivity;
 
 public class DashboardActivity extends AppCompatActivity {
 
@@ -43,6 +44,14 @@ public class DashboardActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(DashboardActivity.this, AirtimeActivity.class));
+            }
+        });
+
+        ImageView data = findViewById(R.id.data);
+        data.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(DashboardActivity.this, InternetDataActivity.class));
             }
         });
     }

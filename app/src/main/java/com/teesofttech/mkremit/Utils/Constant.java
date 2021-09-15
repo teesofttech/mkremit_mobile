@@ -39,7 +39,7 @@ public class Constant {
     public static String GET_ALL_TRAANSCTIOON = Constant.Base() + "vending/logs";
     public static String GET_COMMISION_AHEAD_REPORT = Constant.Base() + "report/commission-ahead-profits";
     public static String WALLET_BALANCE = Constant.Base() + "wallets";
-    public static String VENDING = Constant.Base() + "Vending/initiate";
+    public static String VENDING_AIRTIME = Constant.Base() + "Buy/buy-recharge";
     public static String VENDING_CONFIRM = Constant.Base() + "Vending";
     public static String VENDING_COMPLETE = Constant.Base() + "Vending/Complete";
     public static String VENDING_SLIP = Constant.Base() + "vending/";
