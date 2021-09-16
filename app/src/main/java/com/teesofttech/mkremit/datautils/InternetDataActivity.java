@@ -107,7 +107,8 @@ public class InternetDataActivity extends AppCompatActivity {
         alertDialogManager = new AlertDialogManager();
         vendorname = new ArrayList<>();
         material_spinner_type = (com.jaredrummler.materialspinner.MaterialSpinner) findViewById(R.id.material_spinner_type);
-
+        cartList = new ArrayList<>();
+        com.libizo.CustomEditText amount = (com.libizo.CustomEditText) findViewById(R.id.amount);
         spinner.setOnItemSelectedListener(new MaterialSpinner.OnItemSelectedListener<String>() {
 
             @Override
@@ -134,11 +135,16 @@ public class InternetDataActivity extends AppCompatActivity {
 
             }
         });
-        material_spinner_type.setOnNothingSelectedListener(new MaterialSpinner.OnNothingSelectedListener() {
-
+        material_spinner_type.setOnItemSelectedListener(new MaterialSpinner.OnItemSelectedListener() {
             @Override
-            public void onNothingSelected(MaterialSpinner spinner) {
-                Snackbar.make(spinner, "Nothing selected", Snackbar.LENGTH_LONG).show();
+            public void onItemSelected(MaterialSpinner view, int position, long id, Object item) {
+               // Snackbar.make(view, "Clicked " + item, Snackbar.LENGTH_LONG).show();
+                //cartList.
+                if (cartList.contains(item)) {
+                    ServiceVendor employee = (ServiceVendor) item;
+                    amount.setText(employee.variationAmount);
+
+                }
             }
         });
 
@@ -149,13 +155,12 @@ public class InternetDataActivity extends AppCompatActivity {
                 .text("Please wait...")
                 .fadeColor(Color.DKGRAY).build();
 
-
     }
 
     private void fetchRecipes(String item) {
         progressDialog.setMessage("Loading");
         progressDialog.show();
-        cartList = new ArrayList<>();
+
         cartList.clear();
         String Url = "http://api.mkremit.com/api/Utility/get-data-plan/" + item;
         Log.d("url", Url);
@@ -171,25 +176,26 @@ public class InternetDataActivity extends AppCompatActivity {
                     String name = response.getString("message");
                     String email = response.getString("statusCode");
                     JSONArray content = response.getJSONArray("data");
-
+                    ServiceVendor de = new ServiceVendor();
+                    de.setId("1");
+                    de.setName("Select One");
+                    de.setVariationAmount("0");cartList.add(de);
                     for (int i = 0; i < content.length(); i++) {
 
                         JSONObject vend = (JSONObject) content
                                 .get(i);
 
-//                        ServiceVendor vendor = new ServiceVendor();
-//                        vendor.setId(vend.getString("id"));
-//                        vendor.setName(vend.getString("name"));
                         ServiceVendor mydic = new ServiceVendor();
                         mydic.setId(vend.getString("id"));
                         mydic.setName(vend.getString("name"));
-                        mydic.setVariationAmount(vend.getString("amount"));
+                        mydic.setVariationAmount(vend.getString("variationAmount"));
+
                         cartList.add(mydic);
                         vendorname.add(vend.getString("name"));
 
-                        //ArrayAdapter userAdapter = new ArrayAdapter(this, R.layout.spinner, cartList.toArray());
-
-                        material_spinner_type.setAdapter(new ArrayAdapter<ServiceVendor>(InternetDataActivity.this, android.R.layout.simple_spinner_dropdown_item, cartList));
+                        ArrayAdapter userAdapter = new ArrayAdapter(InternetDataActivity.this, R.layout.spinner, cartList);
+                        material_spinner_type.setAdapter(userAdapter);
+                        ;//new ArrayAdapter<ServiceVendor>(InternetDataActivity.this, android.R.layout.simple_spinner_dropdown_item, cartList));
 
                         /*JSONArray services = vend.getJSONArray("serivces");
 
