@@ -13,6 +13,7 @@ import android.widget.TextView;
 import com.teesofttech.mkremit.R;
 import com.teesofttech.mkremit.airtimeutils.AirtimeActivity;
 import com.teesofttech.mkremit.datautils.InternetDataActivity;
+import com.teesofttech.mkremit.electricityutils.ElectricityActivity;
 
 public class DashboardActivity extends AppCompatActivity {
 
@@ -52,6 +53,14 @@ public class DashboardActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(DashboardActivity.this, InternetDataActivity.class));
+            }
+        });
+
+        ImageView electricity = findViewById(R.id.electricity);
+        electricity.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(DashboardActivity.this, ElectricityActivity.class));
             }
         });
     }

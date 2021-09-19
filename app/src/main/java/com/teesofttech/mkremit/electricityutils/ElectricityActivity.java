@@ -1,4 +1,4 @@
-package com.teesofttech.mkremit.datautils;
+package com.teesofttech.mkremit.electricityutils;
 
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
@@ -36,7 +36,6 @@ import com.android.volley.VolleyError;
 import com.android.volley.VolleyLog;
 import com.android.volley.toolbox.HttpHeaderParser;
 import com.android.volley.toolbox.JsonObjectRequest;
-import com.google.android.material.snackbar.Snackbar;
 import com.jaredrummler.materialspinner.MaterialSpinner;
 import com.libizo.CustomEditText;
 import com.teesofttech.mkremit.R;
@@ -44,8 +43,9 @@ import com.teesofttech.mkremit.Utils.AlertDialogManager;
 import com.teesofttech.mkremit.Utils.Constant;
 import com.teesofttech.mkremit.Utils.PrefUtils;
 import com.teesofttech.mkremit.airtimeutils.AirtimeActivity;
-import com.teesofttech.mkremit.airtimeutils.PreviewActivity;
 import com.teesofttech.mkremit.app.AppController;
+import com.teesofttech.mkremit.datautils.InternetDataActivity;
+import com.teesofttech.mkremit.datautils.PreviewInternetActivity;
 import com.teesofttech.mkremit.models.ServiceVendor;
 import com.teesofttech.mkremit.models.UserModel;
 
@@ -61,20 +61,27 @@ import java.net.MalformedURLException;
 import java.net.SocketException;
 import java.net.SocketTimeoutException;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 import cc.cloudist.acplibrary.ACProgressConstant;
 import cc.cloudist.acplibrary.ACProgressFlower;
 
-public class InternetDataActivity extends AppCompatActivity {
+public class ElectricityActivity extends AppCompatActivity {
     private static final String[] Airitime = {
             "Select One",
-            "MTN",
-            "GLO",
-            "Airtel",
-            "9Mobile"
+            "Ikeja Electric Payment - IKEDC",
+            "Eko Electric Payment - EKEDC",
+            "Abuja Electricity Distribution Company- AEDC",
+            "PHED - Port Harcourt Electric",
+            "Jos Electric - JED",
+            "Kaduna Electric - KAEDCO",
+            "IBEDC - Ibadan Electricity Distribution Company"
+    };
+
+    private static final String[] Items = {
+            "Select One",
+            "Prepaid",
+            "PostPaid"
     };
     AlertDialogManager alertDialogManager;
     ImageView image;
@@ -93,13 +100,12 @@ public class InternetDataActivity extends AppCompatActivity {
     //ArrayList<vendModel> ServiceType;
     Spinner materialSpinner, materialSpinnerType;
     com.jaredrummler.materialspinner.MaterialSpinner material_spinner_type;
-    String plan;
+    Object plan;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_internet_data);
-
+        setContentView(R.layout.activity_electricity);
         final ActionBar abar = getSupportActionBar();
         View viewActionBar = getLayoutInflater().inflate(R.layout.custom_bar, null);
         ActionBar.LayoutParams params = new ActionBar.LayoutParams(//Center the textview in the ActionBar !
@@ -107,8 +113,8 @@ public class InternetDataActivity extends AppCompatActivity {
                 ActionBar.LayoutParams.MATCH_PARENT,
                 Gravity.CENTER);
         TextView txttitle = (TextView) viewActionBar.findViewById(R.id.txtTitle);
-        txttitle.setText("I N T E R N E T");
-        txttitle.setTextSize(14);
+        txttitle.setText("E L E C T R I C I T Y");
+        txttitle.setTextSize(18);
         if (abar != null) {
             abar.setCustomView(viewActionBar, params);
 
@@ -123,31 +129,47 @@ public class InternetDataActivity extends AppCompatActivity {
         alertDialogManager = new AlertDialogManager();
         vendorname = new ArrayList<>();
         material_spinner_type = (com.jaredrummler.materialspinner.MaterialSpinner) findViewById(R.id.material_spinner_type);
+        material_spinner_type.setItems(Items);
+
         cartList = new ArrayList<>();
-        model = PrefUtils.getCurrentUser(InternetDataActivity.this);
+        model = PrefUtils.getCurrentUser(ElectricityActivity.this);
         com.libizo.CustomEditText amount = (com.libizo.CustomEditText) findViewById(R.id.amount);
+        com.libizo.CustomEditText meterNumber = (com.libizo.CustomEditText) findViewById(R.id.meterNumber);
+
         spinner.setOnItemSelectedListener(new MaterialSpinner.OnItemSelectedListener<String>() {
             @Override
             public void onItemSelected(MaterialSpinner view, int position, long id, String item) {
                 // Snackbar.make(view, "Clicked " + item, Snackbar.LENGTH_LONG).show();
 
-                network = item;
-                if (item.equals("MTN")) {
-                    image.setImageResource(R.mipmap.mtnlogo);
+                //network = item;
+                if (item.equals("Ikeja Electric Payment - IKEDC")) {
+                    image.setImageResource(R.mipmap.ikedc_logo);
+                    network = "ikeja-electric";
                 }
-                if (item.equals("GLO")) {
-                    image.setImageResource(R.mipmap.glologo);
+                if (item.equals("Eko Electric Payment - EKEDC")) {
+                    image.setImageResource(R.mipmap.neweko);
+                    network = "eko-electric";
                 }
-                if (item.equals("Airtel")) {
-                    image.setImageResource(R.mipmap.airtel);
+                if (item.equals("Abuja Electricity Distribution Company- AEDC")) {
+                    image.setImageResource(R.mipmap.aedc_logo_ne);
+                    network = "abuja-electric";
                 }
-                if (item.equals("9Mobile")) {
-                    image.setImageResource(R.mipmap.ninemobile);
+                if (item.equals("PHED - Port Harcourt Electric")) {
+                    image.setImageResource(R.mipmap.phed);
+                    network = "portharcourt-electric";
                 }
-
-                //fetch the corresponding services
-                String netData = network.toLowerCase() + "-data".toLowerCase();
-                fetchRecipes(netData);
+                if (item.equals("Jos Electric - JED")) {
+                    image.setImageResource(R.mipmap.jed);
+                    network = "jos-electric";
+                }
+                if (item.equals("Kaduna Electric - KAEDCO")) {
+                    image.setImageResource(R.mipmap.kaedc);
+                    network = "kaduna-electric";
+                }
+                if (item.equals("IBEDC - Ibadan Electricity Distribution Company")) {
+                    image.setImageResource(R.mipmap.ibedc_logo_new);
+                    network = "ibadan-electric";
+                }
 
             }
         });
@@ -156,17 +178,12 @@ public class InternetDataActivity extends AppCompatActivity {
             public void onItemSelected(MaterialSpinner view, int position, long id, Object item) {
                 // Snackbar.make(view, "Clicked " + item, Snackbar.LENGTH_LONG).show();
                 //cartList.
-                if (cartList.contains(item)) {
-                    ServiceVendor employee = (ServiceVendor) item;
-                    amount.setText(employee.variationAmount);
-                    plan = employee.variationCode;
-                    //Log.d("pla", employee.variationCode);
-                }
+                plan = item;
             }
         });
 
 
-        ACProgressFlower dialog = new ACProgressFlower.Builder(InternetDataActivity.this)
+        ACProgressFlower dialog = new ACProgressFlower.Builder(ElectricityActivity.this)
                 .direction(ACProgressConstant.DIRECT_CLOCKWISE)
                 .themeColor(Color.WHITE)
                 .text("Please wait...")
@@ -181,21 +198,33 @@ public class InternetDataActivity extends AppCompatActivity {
 
                 String _phonenumber = phonenumber.getText().toString();
                 String Amount = amount.getText().toString();
-
+                String _meterNumber = meterNumber.getText().toString();
                 // dialog.show();
 
                 if (phonenumber.getText().toString().equals("") && amount.getText().toString().equals("")) {
-                    alertDialogManager.showAlertDialog(InternetDataActivity.this, "Error", "Please fill up the empty field (s)", false);
+                    alertDialogManager.showAlertDialog(ElectricityActivity.this, "Error", "Please fill up the empty field (s)", false);
                 } else {
                     JSONObject param = new JSONObject();
 
+                    /*{
+  "network": "ikeja-electric",
+  "amount": "500",
+  "email": "tundeesanju@gmail.com.ng",
+  "phoneNumber": "0101334124",
+  "userId": "eb138597-99d8-4e75-b4c5-4dc61147d5b6",
+  "dataPlan": "string",
+  "meterNumber": "0101334124",
+  "meterType": "PostPaid"
+}
+*/
                     try {
                         param.put("network", network);
                         param.put("phoneNumber", _phonenumber.trim());
                         param.put("amount", Amount.trim());
                         param.put("email", model.getEmail());
-                        param.put("dataPlan", plan);
                         param.put("userId", model.getId());
+                        param.put("meterNumber", _meterNumber);
+                        param.put("meterType", plan.toString());
                         Log.d("param", param.toString());
                     } catch (JSONException e) {
                         e.printStackTrace();
@@ -203,7 +232,7 @@ public class InternetDataActivity extends AppCompatActivity {
                     dialog.show();
                     // Make request for JSONObject
                     JsonObjectRequest jsonObjReq = new JsonObjectRequest(
-                            Request.Method.POST, Constant.VENDING_DATA, param,
+                            Request.Method.POST, Constant.VENDING_ELECTRICITY, param,
                             new Response.Listener<JSONObject>() {
                                 @Override
                                 public void onResponse(JSONObject response) {
@@ -214,13 +243,14 @@ public class InternetDataActivity extends AppCompatActivity {
                                         Log.d("stat", statusCode);
                                         if (statusCode.equals("200")) {
                                             //alertDialogManager.showAlertDialog(RechargeVendorsActivity.this, "Success", response.getString("message"), true);
-                                            Toast.makeText(InternetDataActivity.this, response.getString("message"), Toast.LENGTH_LONG).show();
+                                            Toast.makeText(ElectricityActivity.this, response.getString("message"), Toast.LENGTH_LONG).show();
 
                                             JSONObject cont = response.getJSONObject("data");
                                             JSONObject content = cont.getJSONObject("transaction");
+                                            JSONObject userProfile = cont.getJSONObject("content");
 
                                             JSONObject serviceProper = cont.getJSONObject("service");
-                                            Intent ii = new Intent(InternetDataActivity.this, PreviewInternetActivity.class);
+                                            Intent ii = new Intent(ElectricityActivity.this, PreviewElectricityActivity.class);
                                             ii.putExtra("serviceId", content.getString("serviceId"));
                                             ii.putExtra("date", content.getString("date"));
                                             ii.putExtra("reference", content.getString("reference"));
@@ -238,6 +268,10 @@ public class InternetDataActivity extends AppCompatActivity {
                                             ii.putExtra("Simage", serviceProper.getString("image"));
                                             ii.putExtra("SserviceId", serviceProper.getString("serviceId"));
                                             ii.putExtra("ScategoryId", serviceProper.getString("categoryId"));
+
+                                            ii.putExtra("customer_Name", userProfile.getString("customer_Name"));
+                                            ii.putExtra("address", userProfile.getString("address"));
+
 
                                             startActivity(ii);
 
@@ -307,7 +341,7 @@ public class InternetDataActivity extends AppCompatActivity {
                                     // Now you can use any deserializer to make sense of data
                                     JSONObject obj = new JSONObject(res);
                                     Log.d("error", obj.getString("message"));
-                                    Toast.makeText(InternetDataActivity.this, obj.getString("message"), Toast.LENGTH_LONG).show();
+                                    Toast.makeText(ElectricityActivity.this, obj.getString("message"), Toast.LENGTH_LONG).show();
                                 } catch (UnsupportedEncodingException e1) {
                                     // Couldn't properly decode data to string
                                     e1.printStackTrace();
@@ -373,7 +407,7 @@ public class InternetDataActivity extends AppCompatActivity {
                         cartList.add(mydic);
                         vendorname.add(vend.getString("name"));
 
-                        ArrayAdapter userAdapter = new ArrayAdapter(InternetDataActivity.this, R.layout.spinner, cartList);
+                        ArrayAdapter userAdapter = new ArrayAdapter(ElectricityActivity.this, R.layout.spinner, cartList);
                         material_spinner_type.setAdapter(userAdapter);
                         ;//new ArrayAdapter<ServiceVendor>(InternetDataActivity.this, android.R.layout.simple_spinner_dropdown_item, cartList));
 
@@ -414,7 +448,7 @@ public class InternetDataActivity extends AppCompatActivity {
 
             @Override
             public void onErrorResponse(VolleyError error) {
-                Toast.makeText(InternetDataActivity.this, "Error occurred while vending", Toast.LENGTH_LONG).show();
+                Toast.makeText(ElectricityActivity.this, "Error occurred while vending", Toast.LENGTH_LONG).show();
                 VolleyLog.d("TAGGG", "Error: " + error.getMessage());
                 // As of f605da3 the following should work
                 progressDialog.dismiss();
@@ -426,7 +460,7 @@ public class InternetDataActivity extends AppCompatActivity {
                         // Now you can use any deserializer to make sense of data
                         JSONObject obj = new JSONObject(res);
                         Log.d("error", obj.getString("message"));
-                        Toast.makeText(InternetDataActivity.this, obj.getString("message"), Toast.LENGTH_LONG).show();
+                        Toast.makeText(ElectricityActivity.this, obj.getString("message"), Toast.LENGTH_LONG).show();
 
                     } catch (UnsupportedEncodingException e1) {
                         // Couldn't properly decode data to string

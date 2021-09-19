@@ -31,6 +31,15 @@
         tools:ignore="GoogleAppIndexingWarning"
         tools:targetApi="m">
         <activity
+            android:name=".electricityutils.PreviewElectricityActivity"
+            android:exported="true" />
+        <activity
+            android:name=".electricityutils.ElectricityActivity"
+            android:exported="true" />
+        <activity
+            android:name=".datautils.PreviewInternetActivity"
+            android:exported="true" />
+        <activity
             android:name=".datautils.InternetDataActivity"
             android:exported="true" />
         <activity

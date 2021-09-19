@@ -40,6 +40,8 @@ public class Constant {
     public static String GET_COMMISION_AHEAD_REPORT = Constant.Base() + "report/commission-ahead-profits";
     public static String WALLET_BALANCE = Constant.Base() + "wallets";
     public static String VENDING_AIRTIME = Constant.Base() + "Buy/buy-recharge";
+    public static String VENDING_DATA = Constant.Base() + "Buy/buy-data";
+    public static String VENDING_ELECTRICITY = Constant.Base() + "Buy/buy-electricity";
     public static String VENDING_CONFIRM = Constant.Base() + "Vending";
     public static String VENDING_COMPLETE = Constant.Base() + "Vending/Complete";
     public static String VENDING_SLIP = Constant.Base() + "vending/";
