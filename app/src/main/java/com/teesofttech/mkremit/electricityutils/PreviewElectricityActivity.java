@@ -50,7 +50,13 @@ public class PreviewElectricityActivity extends AppCompatActivity {
         TextView customer_number = findViewById(R.id.customer_number);
         TextView Amount = findViewById(R.id.Amount);
         TextView vending_status = findViewById(R.id.vending_status);
-        TextView customer_name = findViewById(R.id.customer_name);
+        TextView phonenumber = findViewById(R.id.customer_name);
+        TextView customerName = findViewById(R.id.customerName_Bind);
+        TextView customer_address = findViewById(R.id.customerAddress_Bind);
+        TextView productType = findViewById(R.id.productType);
+        TextView totalamount = findViewById(R.id.totalamount);
+        TextView paymentMethod = findViewById(R.id.paymentMethod);
+
         TextView pin = findViewById(R.id.pin);
         TextView service = findViewById(R.id.service);
         //TextView quantity_text = findViewById(R.id.quantity_text);
@@ -60,10 +66,16 @@ public class PreviewElectricityActivity extends AppCompatActivity {
         Intent ii = getIntent();
         vendingCode.setText(ii.getStringExtra("reference"));
         customer_number.setText(ii.getStringExtra("serviceId"));
-        Amount.setText(ii.getStringExtra("amount"));
+        Amount.setText("N " + ii.getStringExtra("amount"));
         vending_status.setText(ii.getStringExtra("paymentStatus"));
         service.setText(ii.getStringExtra("Sname"));
-        customer_name.setText(ii.getStringExtra("phonenumber"));
+
+        phonenumber.setText(ii.getStringExtra("phonenumber"));
+        customerName.setText(ii.getStringExtra("customer_Name"));
+        customer_address.setText(ii.getStringExtra("address"));
+        productType.setText(ii.getStringExtra("productType"));
+        totalamount.setText("N " + ii.getStringExtra("totalamount"));
+        paymentMethod.setText(ii.getStringExtra("paymentMethod"));
 
         String ImageURL = ii.getStringExtra("Simage");
         Glide

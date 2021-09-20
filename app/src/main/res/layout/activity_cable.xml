@@ -48,8 +48,8 @@
 
             <com.jaredrummler.materialspinner.MaterialSpinner
                 android:id="@+id/material_spinner_type"
-                app_ms_dropdown_height="wrap_content"
-                app_ms_dropdown_max_height="350dp"
+                app_ms_dropdown_height="match_parent"
+                app_ms_dropdown_max_height="match_parent"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp" />
@@ -80,18 +80,18 @@
                 app:libIZO_setPrefixTextColor="@color/colorPrimaryDark"
                 app:libIZO_setStrokeWidth="2dp" />
 
-            <com.libizo.CustomEditText
-                android:id="@+id/phonenumber"
-                android:layout_width="match_parent"
-                android:layout_height="55dp"
-                android:layout_marginTop="20dp"
-                android:hint="Phone Number"
-                android:inputType="number"
-                app:libIZO_setBorderView="true"
-                app:libIZO_setClearIconVisible="true"
-                app:libIZO_setCornerRadius="4dp"
-                app:libIZO_setPrefixTextColor="@color/colorPrimaryDark"
-                app:libIZO_setStrokeWidth="2dp" />
+<!--            <com.libizo.CustomEditText-->
+<!--                android:id="@+id/phonenumber"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="55dp"-->
+<!--                android:layout_marginTop="20dp"-->
+<!--                android:hint="Phone Number"-->
+<!--                android:inputType="number"-->
+<!--                app:libIZO_setBorderView="true"-->
+<!--                app:libIZO_setClearIconVisible="true"-->
+<!--                app:libIZO_setCornerRadius="4dp"-->
+<!--                app:libIZO_setPrefixTextColor="@color/colorPrimaryDark"-->
+<!--                app:libIZO_setStrokeWidth="2dp" />-->
 
 
             <com.libizo.CustomEditText

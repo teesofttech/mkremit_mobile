@@ -12,8 +12,14 @@ import android.widget.TextView;
 
 import com.teesofttech.mkremit.R;
 import com.teesofttech.mkremit.airtimeutils.AirtimeActivity;
+import com.teesofttech.mkremit.cableutils.CableActivity;
 import com.teesofttech.mkremit.datautils.InternetDataActivity;
+import com.teesofttech.mkremit.educationutils.EducationActivity;
 import com.teesofttech.mkremit.electricityutils.ElectricityActivity;
+import com.teesofttech.mkremit.fundingutils.FundingHistoryActivity;
+import com.teesofttech.mkremit.profileutils.ProfileActivity;
+import com.teesofttech.mkremit.transactionutils.TransactionActivity;
+import com.teesofttech.mkremit.walletutils.WalletActivity;
 
 public class DashboardActivity extends AppCompatActivity {
 
@@ -61,6 +67,53 @@ public class DashboardActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(DashboardActivity.this, ElectricityActivity.class));
+            }
+        });
+
+        ImageView cabletv = findViewById(R.id.cabletv);
+        cabletv.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(DashboardActivity.this, CableActivity.class));
+            }
+        });
+        ImageView educational = findViewById(R.id.educational);
+        educational.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(DashboardActivity.this, EducationActivity.class));
+            }
+        });
+
+        ImageView transaction = findViewById(R.id.transaction);
+        transaction.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(DashboardActivity.this, TransactionActivity.class));
+            }
+        });
+
+        ImageView wallet = findViewById(R.id.wallet);
+        wallet.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(DashboardActivity.this, WalletActivity.class));
+            }
+        });
+
+        ImageView profile = findViewById(R.id.profile);
+        profile.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(DashboardActivity.this, ProfileActivity.class));
+            }
+        });
+
+        ImageView fundingHistory = findViewById(R.id.fundingHistory);
+        fundingHistory.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(DashboardActivity.this, FundingHistoryActivity.class));
             }
         });
     }
