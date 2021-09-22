@@ -29,7 +29,7 @@ public class Constant {
     public static String REGISTER_AGENT = Constant.Base() + "users/create-agent";
     public static String REGISTER = Constant.Base() + "user/register";
     public static String LOGIN = Constant.Base() + "user/login";
-    public static String SUPER_REGISTER_DEALER = Constant.Base() + "users/create-dealer";
+    public static String VENDING_AIRTIME_COMPLETE = Constant.Base() + "Vending/vending-recharge-complete";
     public static String SUPER_REGISTER_SUPERDEALER = Constant.Base() + "users/create-superdealer";
     public static String DEALER_LIST = Constant.Base() + "dealers";
     public static String GET_WALLET_LIST = Constant.Base() + "/users/wallets";

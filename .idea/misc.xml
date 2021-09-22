@@ -31,6 +31,7 @@
         <entry key="app/src/main/res/drawable/wave.xml" value="0.25" />
         <entry key="app/src/main/res/font/poppins.xml" value="0.31296296296296294" />
         <entry key="app/src/main/res/layout/activity_airtime.xml" value="0.335" />
+        <entry key="app/src/main/res/layout/activity_airtime_completion.xml" value="0.335" />
         <entry key="app/src/main/res/layout/activity_authenticate_pin.xml" value="0.3098958333333333" />
         <entry key="app/src/main/res/layout/activity_cable.xml" value="0.16302083333333334" />
         <entry key="app/src/main/res/layout/activity_dashboard.xml" value="0.33" />
