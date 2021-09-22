@@ -310,16 +310,45 @@
                 android:orientation="vertical">
 
                 <Button
-                    android:id="@+id/btnComplete"
+                    android:id="@+id/btnViaCard"
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
                     android:layout_marginLeft="37dp"
                     android:layout_marginRight="36dp"
                     android:background="@drawable/shape"
-                    android:text="Complete"
-                    android:textAllCaps="false"
+                    android:text="Pay Via Card"
+                    android:textAllCaps="true"
                     android:textColor="@color/white"
-                    android:textSize="15sp" />
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
+
+                <Button
+                    android:id="@+id/btnViaWallet"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_marginLeft="37dp"
+                    android:layout_marginTop="@dimen/padding_10"
+                    android:layout_marginRight="36dp"
+                    android:background="@drawable/shape_blue"
+                    android:text="Pay Via Wallet"
+                    android:textAllCaps="true"
+                    android:textColor="@color/white"
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
+
+                <Button
+                    android:id="@+id/btnViaBitcoin"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_marginLeft="37dp"
+                    android:layout_marginTop="@dimen/padding_10"
+                    android:layout_marginRight="36dp"
+                    android:background="@drawable/shape_outline"
+                    android:text="Pay Via Bitcoin"
+                    android:textAllCaps="true"
+                    android:textColor="@color/white"
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
 
 
             </LinearLayout>

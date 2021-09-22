@@ -8,6 +8,7 @@ import android.graphics.Color;
 import android.os.Bundle;
 import android.view.Gravity;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -78,5 +79,31 @@ public class PreviewActivity extends AppCompatActivity {
                 .themeColor(Color.WHITE)
                 .text("Please wait...")
                 .fadeColor(Color.DKGRAY).build();
+
+        Button btnWallet = findViewById(R.id.btnViaWallet);
+        Button btnCard = findViewById(R.id.btnViaCard);
+        Button btnViaBitcoin = findViewById(R.id.btnViaBitcoin);
+
+        btnWallet.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
+
+        btnCard.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
+
+        btnViaBitcoin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
+
     }
 }
