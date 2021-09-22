@@ -33,12 +33,13 @@
                     android:textSize="20dp" />
 
                 <TextView
+                    android:id="@+id/firstname"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_below="@id/t1"
                     android:fontFamily="sans-serif-black"
                     android:letterSpacing="0.04"
-                    android:text="MAGESHKUMAR"
+                    android:text=""
                     android:textColor="@color/colorPrimaryDark"
                     android:textSize="28dp" />
 
@@ -68,12 +69,13 @@
                     android:textSize="22dp" />
 
                 <TextView
+                    android:id="@+id/balance"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="sans-serif-black"
                     android:paddingLeft="40dp"
                     android:paddingTop="10dp"
-                    android:text="$3,729.00"
+                    android:text="₦0"
                     android:textColor="#fff"
                     android:textSize="35dp"
                     android:textStyle="bold" />

@@ -106,7 +106,7 @@ public class EducationActivity extends AppCompatActivity {
                 Gravity.CENTER);
         TextView txttitle = (TextView) viewActionBar.findViewById(R.id.txtTitle);
         txttitle.setText("E D U C A T I O N");
-        txttitle.setTextSize(14);
+        txttitle.setTextSize(16);
         if (abar != null) {
             abar.setCustomView(viewActionBar, params);
 
@@ -151,11 +151,11 @@ public class EducationActivity extends AppCompatActivity {
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
 
                 ServiceVendor serviceVendor = (ServiceVendor) materialSpinnerType.getSelectedItem();
-                Log.d("user", serviceVendor.variationAmount);
+                //Log.d("user", serviceVendor.variationAmount);
 //                if (cartList.contains(item)) {
 //                    ServiceVendor employee = (ServiceVendor) item;
                 amount.setText(serviceVendor.variationAmount);
-//                    plan = employee.variationCode;
+                plan = serviceVendor.variationCode;
 //                    //Log.d("pla", employee.variationCode);
 //                }
 
@@ -210,6 +210,7 @@ public class EducationActivity extends AppCompatActivity {
                         param.put("email", model.getEmail());
                         param.put("dataPlan", plan);
                         param.put("userId", model.getId());
+                        param.put("quantity", Quantity);
                         Log.d("param", param.toString());
                     } catch (JSONException e) {
                         e.printStackTrace();
@@ -234,7 +235,7 @@ public class EducationActivity extends AppCompatActivity {
                                             JSONObject content = cont.getJSONObject("transaction");
 
                                             JSONObject serviceProper = cont.getJSONObject("service");
-                                            Intent ii = new Intent(EducationActivity.this, PreviewInternetActivity.class);
+                                            Intent ii = new Intent(EducationActivity.this, PreviewEducationActivity.class);
                                             ii.putExtra("serviceId", content.getString("serviceId"));
                                             ii.putExtra("date", content.getString("date"));
                                             ii.putExtra("reference", content.getString("reference"));

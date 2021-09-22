@@ -52,7 +52,7 @@ public class Constant {
     public static String ApproveUrl = Constant.Base() + "fundingRequest";
     public static String edit_user_profile = Constant.Base() + "users/profile";
     public static String GET_DASHBOARD = Constant.Base() + "users/dashboard";
-    public static String GETBANKDETAILS = Constant.Base() + "users/reservedBankDetails";
+    public static String GETBANKDETAILS = Constant.Base() + "wallet/getWalletBalance";
     public static String GETBANKDETAILS_GENERATE = Constant.Base() + "users/generate-reservedBankAccount";
     public static String FETCH_BANK_DETAILS = Constant.Base() + "banktransfer/fetchBank";
     public static String UserDeactivated = Constant.Base() + "users/isdeactivated";

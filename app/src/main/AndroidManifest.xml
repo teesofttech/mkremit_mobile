@@ -31,6 +31,9 @@
         tools:ignore="GoogleAppIndexingWarning"
         tools:targetApi="m">
         <activity
+            android:name=".educationutils.PreviewEducationActivity"
+            android:exported="true" />
+        <activity
             android:name=".fundingutils.FundingHistoryActivity"
             android:exported="true" />
         <activity
