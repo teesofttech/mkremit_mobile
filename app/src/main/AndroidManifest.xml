@@ -69,13 +69,25 @@
             android:exported="true" />
         <activity
             android:name=".datautils.InternetDataActivity"
-            android:exported="true" />
+            android:exported="true">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".datautils.InternetDataActivity" />
+        </activity>
         <activity
             android:name=".airtimeutils.PreviewActivity"
-            android:exported="true" />
+            android:exported="true">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".airtimeutils.PreviewActivity" />
+        </activity>
         <activity
             android:name=".airtimeutils.AirtimeActivity"
-            android:exported="true" />
+            android:exported="true">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".airtimeutils.AirtimeActivity" />
+        </activity>
         <activity
             android:name=".auth.SetPinActivity"
             android:exported="true"

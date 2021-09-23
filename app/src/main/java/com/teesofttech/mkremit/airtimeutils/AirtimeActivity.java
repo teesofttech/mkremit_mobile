@@ -125,7 +125,7 @@ public class AirtimeActivity extends AppCompatActivity {
             @Override
             public void onItemSelected(MaterialSpinner view, int position, long id, String item) {
                 // Snackbar.make(view, "Clicked " + item, Snackbar.LENGTH_LONG).show();
-
+                image.setVisibility(View.VISIBLE);
                 network = item;
                 if (item.equals("MTN")) {
                     image.setImageResource(R.mipmap.mtnlogo);
