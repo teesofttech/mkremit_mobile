@@ -45,21 +45,6 @@ public class AirtimeCompletionActivity extends AppCompatActivity {
         }
         alertDialogManager = new AlertDialogManager();
         model = PrefUtils.getCurrentUser(AirtimeCompletionActivity.this);
-/*  ii.putExtra("billerCode", content.getString("billerCode"));
-                                    ii.putExtra("date", content.getString("date"));
-                                    ii.putExtra("reference", content.getString("transactionID"));
-                                    ii.putExtra("productType", content.getString("productType"));
-                                    ii.putExtra("variationCode", content.getString("variationCode"));
-                                    ii.putExtra("amount", content.getString("amount"));
-                                    ii.putExtra("paymentMethod", content.getString("paymentMethod"));
-                                    ii.putExtra("phonenumber", content.getString("phonenumber"));
-                                    ii.putExtra("paymentStatus", content.getString("paymentStatus"));
-                                    ii.putExtra("id", content.getString("id"));
-                                    ii.putExtra("logo", content.getString("logo"));
-                                    ii.putExtra("message", content.getString("message"));
-                                    ii.putExtra("name", content.getString("name"));
-                                    ii.putExtra("totalAmount", content.getString("totalAmount"));
-                                    ii.putExtra("transactionStatus", content.getString("transactionStatus"));*/
 
 
         TextView vendingCode = findViewById(R.id.vendingCode);

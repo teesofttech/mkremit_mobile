@@ -32,7 +32,11 @@
         tools:targetApi="m">
         <activity
             android:name=".airtimeutils.AirtimeCompletionActivity"
-            android:exported="true" />
+            android:exported="true">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".airtimeutils.AirtimeCompletionActivity" />
+        </activity>
         <activity
             android:name=".educationutils.PreviewEducationActivity"
             android:exported="true" />
