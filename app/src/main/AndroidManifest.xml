@@ -60,13 +60,25 @@
             android:exported="true" />
         <activity
             android:name=".electricityutils.PreviewElectricityActivity"
-            android:exported="true" />
+            android:exported="true">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".electricityutils.PreviewElectricityActivity" />
+        </activity>
         <activity
             android:name=".electricityutils.ElectricityActivity"
-            android:exported="true" />
+            android:exported="true">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".electricityutils.ElectricityActivity" />
+        </activity>
         <activity
             android:name=".datautils.PreviewInternetActivity"
-            android:exported="true" />
+            android:exported="true">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".datautils.PreviewInternetActivity" />
+        </activity>
         <activity
             android:name=".datautils.InternetDataActivity"
             android:exported="true">
