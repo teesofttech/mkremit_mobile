@@ -63,6 +63,7 @@
                         <EditText
                             android:id="@+id/editTextName"
                             style="@style/modifiedEditText"
+                            android:fontFamily="@font/poppins_medium"
                             android:hint="First Name"
                             android:inputType="textPersonName"
                             android:maxLines="1" />
@@ -76,7 +77,9 @@
 
                         <EditText
                             android:id="@+id/editLTextName"
+
                             style="@style/modifiedEditText"
+                            android:fontFamily="@font/poppins_medium"
                             android:hint="Last Name"
                             android:inputType="textPersonName"
                             android:maxLines="1" />
@@ -89,7 +92,9 @@
 
                         <EditText
                             android:id="@+id/editTextEmail"
+
                             style="@style/modifiedEditText"
+                            android:fontFamily="@font/poppins_medium"
                             android:hint="@string/login_email_hint"
                             android:inputType="textEmailAddress"
                             android:maxLines="1" />
@@ -102,7 +107,9 @@
 
                         <EditText
                             android:id="@+id/editTextMobile"
+
                             style="@style/modifiedEditText"
+                            android:fontFamily="@font/poppins_medium"
                             android:hint="Mobile Number"
                             android:inputType="phone"
                             android:maxLines="1" />
@@ -115,7 +122,9 @@
 
                         <EditText
                             android:id="@+id/editTextPassword"
+
                             style="@style/modifiedEditText"
+                            android:fontFamily="@font/poppins_medium"
                             android:hint="@string/login_password_hint"
                             android:inputType="textPassword"
                             android:maxLines="1" />
@@ -129,6 +138,7 @@
                         android:layout_marginTop="40dp"
                         android:layout_marginRight="20dp"
                         android:background="@drawable/shape"
+                        android:fontFamily="@font/poppins_bold"
                         android:text="REGISTER"
                         android:textAllCaps="false"
                         android:textColor="@color/white"

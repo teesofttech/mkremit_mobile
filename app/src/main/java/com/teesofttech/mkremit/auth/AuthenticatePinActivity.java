@@ -55,7 +55,7 @@ public class AuthenticatePinActivity extends AppCompatActivity {
         TextView promptView = (TextView) findViewById(R.id.promptview);
         Typeface typeFace = Typeface.createFromAsset(getApplicationContext().getAssets(), "fonts/Font-Bold.ttf");
         passCodeView.setTypeFace(typeFace);
-        passCodeView.setKeyTextColor(R.color.black_shade);
+        passCodeView.setKeyTextColor(R.color.green);
         passCodeView.setEmptyDrawable(R.drawable.empty_dot);
         passCodeView.setFilledDrawable(R.drawable.filled_dot);
         promptView.setTypeface(typeFace);

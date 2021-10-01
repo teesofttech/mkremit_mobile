@@ -135,7 +135,7 @@ public class PreviewInternetActivity extends AppCompatActivity {
                 }
 
                 JsonObjectRequest jsonObjReq = new JsonObjectRequest(
-                        Request.Method.POST, Constant.VENDING_AIRTIME_COMPLETE_BY_WALLET, params,
+                        Request.Method.POST, Constant.VENDING_DATA_COMPLETE_BY_WALLET, params,
                         new com.android.volley.Response.Listener<JSONObject>() {
                             @Override
                             public void onResponse(JSONObject response) {
@@ -304,7 +304,7 @@ public class PreviewInternetActivity extends AppCompatActivity {
                     final String vbRespcode = arr.getString("vbvrespcode");
                     final String vbrespmessage = arr.getString("vbvrespmessage");
 
-                    String vendingComplete = Constant.VENDING_AIRTIME_COMPLETE + "/" + vendingCode.getText().toString();
+                    String vendingComplete = Constant.VENDING_DATA_COMPLETE + "/" + vendingCode.getText().toString();
                     JsonObjectRequest jsonObjReq = new JsonObjectRequest(Request.Method.GET,
                             vendingComplete, null, new Response.Listener<JSONObject>() {
                         @Override

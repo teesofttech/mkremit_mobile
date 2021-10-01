@@ -50,7 +50,7 @@ public class SetPinActivity extends AppCompatActivity {
         TextView promptView = (TextView) findViewById(R.id.promptview);
         Typeface typeFace = Typeface.createFromAsset(getAssets(), "fonts/Font-Bold.ttf");
         passCodeView.setTypeFace(typeFace);
-        passCodeView.setKeyTextColor(R.color.black_shade);
+        passCodeView.setKeyTextColor(R.color.green);
         passCodeView.setEmptyDrawable(R.drawable.empty_dot);
         passCodeView.setFilledDrawable(R.drawable.filled_dot);
         promptView.setTypeface(typeFace);
@@ -87,12 +87,12 @@ public class SetPinActivity extends AppCompatActivity {
                 if (text.length() == 4) {
                     PINModel pinModel = new PINModel();
                     pinModel.setCode(text);
-                    pinModel.setDealerCode(userModel.getDealerCode());
+                 //   pinModel.setDealerCode(userModel.get);
                     PrefUtils.setPinUser(pinModel, SetPinActivity.this);
                     startActivity(new Intent(SetPinActivity.this, LoginActivity.class));
                     finish();
                 } else {
-                    passCodeView.setError(true);
+                  //  passCodeView.setError(true);
                 }
             }
         });

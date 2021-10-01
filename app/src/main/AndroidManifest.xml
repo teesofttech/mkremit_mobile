@@ -31,6 +31,24 @@
         tools:ignore="GoogleAppIndexingWarning"
         tools:targetApi="m">
         <activity
+            android:name=".billsUtil.BillsActivity"
+            android:exported="true" />
+        <activity
+            android:name=".fundingutils.FundWalletActivity"
+            android:exported="true" />
+        <activity
+            android:name=".cableutils.CableCompleteActivity"
+            android:exported="true" />
+        <activity
+            android:name=".cableutils.PreviewCableActivity"
+            android:exported="true" />
+        <activity
+            android:name=".datautils.DataCompleteActivity"
+            android:exported="true" />
+        <activity
+            android:name=".educationutils.EducationCompleteActivity"
+            android:exported="true" />
+        <activity
             android:name=".airtimeutils.AirtimeCompletionActivity"
             android:exported="true">
             <meta-data

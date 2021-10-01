@@ -1,5 +1,6 @@
 package com.teesofttech.mkremit.dashboard;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.RecyclerView;
@@ -9,6 +10,7 @@ import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Gravity;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -24,15 +26,18 @@ import com.android.volley.VolleyError;
 import com.android.volley.VolleyLog;
 import com.android.volley.toolbox.HttpHeaderParser;
 import com.android.volley.toolbox.JsonObjectRequest;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.teesofttech.mkremit.R;
 import com.teesofttech.mkremit.Utils.Constant;
 import com.teesofttech.mkremit.Utils.PrefUtils;
 import com.teesofttech.mkremit.airtimeutils.AirtimeActivity;
 import com.teesofttech.mkremit.app.AppController;
+import com.teesofttech.mkremit.billsUtil.BillsActivity;
 import com.teesofttech.mkremit.cableutils.CableActivity;
 import com.teesofttech.mkremit.datautils.InternetDataActivity;
 import com.teesofttech.mkremit.educationutils.EducationActivity;
 import com.teesofttech.mkremit.electricityutils.ElectricityActivity;
+import com.teesofttech.mkremit.fundingutils.FundWalletActivity;
 import com.teesofttech.mkremit.fundingutils.FundingHistoryActivity;
 import com.teesofttech.mkremit.models.UserModel;
 import com.teesofttech.mkremit.profileutils.ProfileActivity;
@@ -162,6 +167,34 @@ public class DashboardActivity extends AppCompatActivity {
                 .fadeColor(Color.DKGRAY).build();
 
         dialog.show();
+
+
+        BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_nav);
+        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                switch (item.getItemId()) {
+                    case R.id.menuExplore:
+                        finish();
+                        overridePendingTransition(0, 0);
+                        startActivity(getIntent());
+                        overridePendingTransition(0, 0);
+                        //startActivity(new Intent(SuperDealerDashboardActivity.this, SuperDealerDashboardActivity.class));
+                        break;
+                    case R.id.menuSearch:
+                        startActivity(new Intent(DashboardActivity.this, BillsActivity.class));
+                        break;
+                    case R.id.menuStar1:
+                        startActivity(new Intent(DashboardActivity.this, FundWalletActivity.class));
+                        break;
+                    case R.id.menuStar2:
+                        startActivity(new Intent(DashboardActivity.this, FundingHistoryActivity.class));
+                        break;
+                }
+
+                return true;
+            }
+        });
     }
 
     private void FetchWallet(String URL) {

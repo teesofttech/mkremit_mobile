@@ -33,6 +33,9 @@ public class Constant {
     public static String VENDING_DATA = Constant.Base() + "Buy/buy-data";
     public static String VENDING_ELECTRICITY = Constant.Base() + "Buy/buy-electricity";
     public static String GETBANKDETAILS = Constant.Base() + "wallet/getWalletBalance";
+    public static String FUNDWALLET = Constant.Base() + "";
+    public static String VENDING_DATA_COMPLETE = Constant.Base() + "Vending/vending-data-complete";
+    public static String VENDING_DATA_COMPLETE_BY_WALLET = Constant.Base() + "Vending/vending-data-complete-by-wallet";
 
 
 }
