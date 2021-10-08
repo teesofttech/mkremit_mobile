@@ -31,12 +31,19 @@
         tools:ignore="GoogleAppIndexingWarning"
         tools:targetApi="m">
         <activity
+            android:name=".electricityutils.ElectricityCompletionActivity"
+            android:exported="true"
+            android:noHistory="true">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".electricityutils.ElectricityCompletionActivity" />
+        </activity>
+        <activity
             android:name=".billsUtil.BillsActivity"
             android:exported="true">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".billsUtil.BillsActivity" />
-
         </activity>
         <activity
             android:name=".fundingutils.FundWalletActivity"
@@ -96,7 +103,6 @@
         <activity
             android:name=".walletutils.WalletActivity"
             android:exported="true">
-
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".walletutils.WalletActivity" />

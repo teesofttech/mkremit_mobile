@@ -41,14 +41,14 @@
                         android:scaleType="centerCrop"
                         android:src="@mipmap/vending" />
 
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="10dp"
-                        android:gravity="center"
-                        android:text="Vending Summary"
-                        android:textColor="@color/colorPrimaryDark"
-                        android:textSize="30dp" />
+                    <!--                    <TextView-->
+                    <!--                        android:layout_width="match_parent"-->
+                    <!--                        android:layout_height="wrap_content"-->
+                    <!--                        android:layout_marginTop="10dp"-->
+                    <!--                        android:gravity="center"-->
+                    <!--                        android:text="Vending Summary"-->
+                    <!--                        android:textColor="@color/colorPrimaryDark"-->
+                    <!--                        android:textSize="30dp" />-->
 
 
                 </LinearLayout>
@@ -87,7 +87,7 @@
                         android:background="#0000"
                         android:gravity="left"
                         android:padding="16dp"
-                        android:text="Vending Code:"
+                        android:text="Biller Code:"
                         android:textColor="@color/textSub"
                         android:textSize="@dimen/text" />
 
@@ -105,44 +105,44 @@
                         android:textSize="@dimen/text" />
                 </LinearLayout>
 
-<!--                <View-->
-<!--                    android:layout_width="match_parent"-->
-<!--                    android:layout_height="1dp"-->
-<!--                    android:background="@color/colordevider" />-->
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/colordevider" />
 
 
                 <!--******bag total********-->
-<!--                <LinearLayout-->
-<!--                    android:layout_width="match_parent"-->
-<!--                    android:layout_height="wrap_content"-->
-<!--                    android:orientation="horizontal">-->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
 
 
-<!--                    <TextView-->
-<!--                        android:id="@+id/bagdiscount"-->
-<!--                        android:layout_width="match_parent"-->
-<!--                        android:layout_height="wrap_content"-->
-<!--                        android:layout_weight="1"-->
-<!--                        android:background="#0000"-->
-<!--                        android:gravity="left"-->
-<!--                        android:padding="16dp"-->
-<!--                        android:text="Network:"-->
-<!--                        android:textColor="@color/textSub"-->
-<!--                        android:textSize="@dimen/text" />-->
+                    <TextView
+                        android:id="@+id/bagdiscount"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="#0000"
+                        android:gravity="left"
+                        android:padding="16dp"
+                        android:text="Transaction Ref:"
+                        android:textColor="@color/textSub"
+                        android:textSize="@dimen/text" />
 
 
-<!--                    <TextView-->
-<!--                        android:id="@+id/customer_number"-->
-<!--                        android:layout_width="match_parent"-->
-<!--                        android:layout_height="wrap_content"-->
-<!--                        android:layout_weight="1"-->
-<!--                        android:background="#0000"-->
-<!--                        android:gravity="right"-->
-<!--                        android:padding="16dp"-->
-<!--                        android:text="0"-->
-<!--                        android:textColor="@color/Tex"-->
-<!--                        android:textSize="@dimen/text" />-->
-<!--                </LinearLayout>-->
+                    <TextView
+                        android:id="@+id/customer_number"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="#0000"
+                        android:gravity="right"
+                        android:padding="16dp"
+                        android:text="0"
+                        android:textColor="@color/Tex"
+                        android:textSize="@dimen/text" />
+                </LinearLayout>
 
                 <View
                     android:layout_width="match_parent"
@@ -393,6 +393,40 @@
                         android:textSize="@dimen/text" />
                 </LinearLayout>
 
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+
+                    <TextView
+                        android:id="@+id/paymentMethod_Text"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="#0000"
+                        android:gravity="left"
+                        android:padding="16dp"
+                        android:text="Payment Method"
+                        android:textColor="@color/textSub"
+                        android:textSize="@dimen/text" />
+
+
+                    <TextView
+                        android:id="@+id/paymentMethod"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="#0000"
+                        android:gravity="right"
+                        android:padding="16dp"
+                        android:text="N/A"
+                        android:textColor="@color/green"
+                        android:textSize="@dimen/text" />
+                </LinearLayout>
+
+
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -445,37 +479,7 @@
                     android:layout_marginRight="36dp"
                     android:background="@drawable/shape"
                     android:fontFamily="@font/poppins_bold"
-                    android:text="Pay Via Card"
-                    android:textAllCaps="true"
-                    android:textColor="@color/white"
-                    android:textSize="15sp"
-                    android:textStyle="bold" />
-
-                <Button
-                    android:id="@+id/btnViaWallet"
-                    android:layout_width="match_parent"
-                    android:layout_height="50dp"
-                    android:layout_marginLeft="37dp"
-                    android:layout_marginTop="@dimen/padding_10"
-                    android:layout_marginRight="36dp"
-                    android:background="@drawable/shape_blue"
-                    android:fontFamily="@font/poppins_bold"
-                    android:text="Pay Via Wallet"
-                    android:textAllCaps="true"
-                    android:textColor="@color/white"
-                    android:textSize="15sp"
-                    android:textStyle="bold" />
-
-                <Button
-                    android:id="@+id/btnViaBitcoin"
-                    android:layout_width="match_parent"
-                    android:layout_height="50dp"
-                    android:layout_marginLeft="37dp"
-                    android:layout_marginTop="@dimen/padding_10"
-                    android:layout_marginRight="36dp"
-                    android:background="@drawable/shape_outline"
-                    android:fontFamily="@font/poppins_bold"
-                    android:text="Pay Via Bitcoin"
+                    android:text="DOWNLOAD AS PDF"
                     android:textAllCaps="true"
                     android:textColor="@color/white"
                     android:textSize="15sp"

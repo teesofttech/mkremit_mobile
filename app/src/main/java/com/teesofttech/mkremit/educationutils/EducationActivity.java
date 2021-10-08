@@ -218,7 +218,7 @@ public class EducationActivity extends AppCompatActivity {
                     dialog.show();
                     // Make request for JSONObject
                     JsonObjectRequest jsonObjReq = new JsonObjectRequest(
-                            Request.Method.POST, Constant.VENDING_DATA, param,
+                            Request.Method.POST, Constant.VENDING_EDUCATION, param,
                             new Response.Listener<JSONObject>() {
                                 @Override
                                 public void onResponse(JSONObject response) {

@@ -82,12 +82,12 @@ public class PreviewEducationActivity extends AppCompatActivity {
         }
 
         vendingCode = findViewById(R.id.vendingCode);
-        TextView customer_number = findViewById(R.id.customer_number);
+        // TextView customer_number = findViewById(R.id.customer_number);
         TextView Amount = findViewById(R.id.Amount);
         TextView vending_status = findViewById(R.id.vending_status);
         TextView phonenumber = findViewById(R.id.customer_name);
-        TextView customerName = findViewById(R.id.customerName_Bind);
-        TextView customer_address = findViewById(R.id.customerAddress_Bind);
+//        TextView customerName = findViewById(R.id.customerName_Bind);
+        // TextView customer_address = findViewById(R.id.customerAddress_Bind);
         TextView productType = findViewById(R.id.productType);
         TextView totalamount = findViewById(R.id.totalamount);
         TextView paymentMethod = findViewById(R.id.paymentMethod);
@@ -100,14 +100,14 @@ public class PreviewEducationActivity extends AppCompatActivity {
 
         Intent ii = getIntent();
         vendingCode.setText(ii.getStringExtra("reference"));
-        customer_number.setText(ii.getStringExtra("serviceId"));
+        //   customer_number.setText(ii.getStringExtra("serviceId"));
         Amount.setText("N " + ii.getStringExtra("amount"));
         vending_status.setText(ii.getStringExtra("paymentStatus"));
         service.setText(ii.getStringExtra("Sname"));
 
         phonenumber.setText(ii.getStringExtra("phonenumber"));
-        customerName.setText(ii.getStringExtra("customer_Name"));
-        customer_address.setText(ii.getStringExtra("address"));
+//        customerName.setText(ii.getStringExtra("customer_Name"));
+//        customer_address.setText(ii.getStringExtra("address"));
         productType.setText(ii.getStringExtra("productType"));
         totalamount.setText("N " + ii.getStringExtra("totalamount"));
         paymentMethod.setText(ii.getStringExtra("paymentMethod"));
