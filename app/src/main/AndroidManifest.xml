@@ -21,10 +21,10 @@
     <application
         android:name=".app.AppController"
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@mipmap/mkremitlogo"
         android:label="@string/app_name"
         android:networkSecurityConfig="@xml/network_security_config"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:roundIcon="@mipmap/mkremitlogo"
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true"
@@ -32,22 +32,43 @@
         tools:targetApi="m">
         <activity
             android:name=".billsUtil.BillsActivity"
-            android:exported="true" />
+            android:exported="true">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".billsUtil.BillsActivity" />
+
+        </activity>
         <activity
             android:name=".fundingutils.FundWalletActivity"
-            android:exported="true" />
+            android:exported="true">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".fundingutils.FundWalletActivity" />
+        </activity>
         <activity
             android:name=".cableutils.CableCompleteActivity"
-            android:exported="true" />
+            android:exported="true">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".cableutils.CableCompleteActivity" />
+        </activity>
         <activity
             android:name=".cableutils.PreviewCableActivity"
-            android:exported="true" />
+            android:exported="true">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".cableutils.PreviewCableActivity" />
+        </activity>
         <activity
             android:name=".datautils.DataCompleteActivity"
             android:exported="true" />
         <activity
             android:name=".educationutils.EducationCompleteActivity"
-            android:exported="true" />
+            android:exported="true">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".educationutils.EducationCompleteActivity" />
+        </activity>
         <activity
             android:name=".airtimeutils.AirtimeCompletionActivity"
             android:exported="true">
@@ -57,25 +78,50 @@
         </activity>
         <activity
             android:name=".educationutils.PreviewEducationActivity"
-            android:exported="true" />
+            android:exported="true">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".educationutils.PreviewEducationActivity" />
+        </activity>
         <activity
             android:name=".fundingutils.FundingHistoryActivity"
-            android:exported="true" />
+            android:exported="true">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".fundingutils.FundingHistoryActivity" />
+        </activity>
         <activity
             android:name=".profileutils.ProfileActivity"
             android:exported="true" />
         <activity
             android:name=".walletutils.WalletActivity"
-            android:exported="true" />
+            android:exported="true">
+
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".walletutils.WalletActivity" />
+        </activity>
         <activity
             android:name=".transactionutils.TransactionActivity"
-            android:exported="true" />
+            android:exported="true">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".transactionutils.TransactionActivity" />
+        </activity>
         <activity
             android:name=".educationutils.EducationActivity"
-            android:exported="true" />
+            android:exported="true">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".educationutils.EducationActivity" />
+        </activity>
         <activity
             android:name=".cableutils.CableActivity"
-            android:exported="true" />
+            android:exported="true">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".cableutils.CableActivity" />
+        </activity>
         <activity
             android:name=".electricityutils.PreviewElectricityActivity"
             android:exported="true">

@@ -171,7 +171,8 @@ public class PreviewActivity extends AppCompatActivity {
 
 
                                     } else {
-                                        alertDialogManager.showAlertDialog(PreviewActivity.this, "Failed", "Opps!!! Wrong username and password supplied", false);
+                                        JSONObject content = object.getJSONObject("standardReportingModel");
+                                        alertDialogManager.showAlertDialog(PreviewActivity.this, "Failed", "" + content.getString("message"), false);
 
                                     }
                                 } catch (JSONException e) {
@@ -337,6 +338,10 @@ public class PreviewActivity extends AppCompatActivity {
                                     ii.putExtra("service", content.getString("service"));
                                     ii.putExtra("message", content.getString("message"));
                                     startActivity(ii);
+
+                                } else {
+                                    JSONObject content = object.getJSONObject("standardReportingModel");
+                                    alertDialogManager.showAlertDialog(PreviewActivity.this, "Failed", "" + content.getString("message"), false);
 
                                 }
 

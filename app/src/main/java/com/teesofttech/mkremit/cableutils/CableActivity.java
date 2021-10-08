@@ -109,7 +109,7 @@ public class CableActivity extends AppCompatActivity {
                 ActionBar.LayoutParams.MATCH_PARENT,
                 Gravity.CENTER);
         TextView txttitle = (TextView) viewActionBar.findViewById(R.id.txtTitle);
-        txttitle.setText("E L E C T R I C I T Y");
+        txttitle.setText("C A B L E  T V");
         txttitle.setTextSize(18);
         if (abar != null) {
             abar.setCustomView(viewActionBar, params);
@@ -146,26 +146,7 @@ public class CableActivity extends AppCompatActivity {
                     image.setImageResource(R.mipmap.gotv);
                     network = "gotv";
                 }
-//                if (item.equals("Abuja Electricity Distribution Company- AEDC")) {
-//                    image.setImageResource(R.mipmap.);
-//                    network = "abuja-electric";
-//                }
-//                if (item.equals("PHED - Port Harcourt Electric")) {
-//                    image.setImageResource(R.mipmap.phed);
-//                    network = "portharcourt-electric";
-//                }
-//                if (item.equals("Jos Electric - JED")) {
-//                    image.setImageResource(R.mipmap.jed);
-//                    network = "jos-electric";
-//                }
-//                if (item.equals("Kaduna Electric - KAEDCO")) {
-//                    image.setImageResource(R.mipmap.kaedc);
-//                    network = "kaduna-electric";
-//                }
-//                if (item.equals("IBEDC - Ibadan Electricity Distribution Company")) {
-//                    image.setImageResource(R.mipmap.ibedc_logo_new);
-//                    network = "ibadan-electric";
-//                }
+
                 fetchRecipes(network);
             }
         });
@@ -186,18 +167,18 @@ public class CableActivity extends AppCompatActivity {
                 .fadeColor(Color.DKGRAY).build();
 
         Button btnContinue = findViewById(R.id.btnContinue);
-      //  CustomEditText phonenumber = findViewById(R.id.phonenumber);
+        //  CustomEditText phonenumber = findViewById(R.id.phonenumber);
         //  CustomEditText amount = findViewById(R.id.amount);
         btnContinue.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-               // String _phonenumber = phonenumber.getText().toString();
+                // String _phonenumber = phonenumber.getText().toString();
                 String Amount = amount.getText().toString();
                 String _meterNumber = meterNumber.getText().toString();
                 // dialog.show();
 
-                if ( amount.getText().toString().equals("")) {
+                if (amount.getText().toString().equals("")) {
                     alertDialogManager.showAlertDialog(CableActivity.this, "Error", "Please fill up the empty field (s)", false);
                 } else {
                     JSONObject param = new JSONObject();

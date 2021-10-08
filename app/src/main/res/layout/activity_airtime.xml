@@ -18,6 +18,7 @@
             android:layout_marginTop="21dp"
             android:scaleType="fitCenter"
             android:src="@mipmap/placeholder"
+            android:background="@drawable/round_outline"
             android:visibility="invisible" />
 
 
