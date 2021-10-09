@@ -59,6 +59,7 @@ public class PreviewEducationActivity extends AppCompatActivity {
     ImageView imageLogo;
     TextView vendingCode;
     ProgressDialog waitingDialog;
+    String amnt;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -82,36 +83,30 @@ public class PreviewEducationActivity extends AppCompatActivity {
         }
 
         vendingCode = findViewById(R.id.vendingCode);
-        // TextView customer_number = findViewById(R.id.customer_number);
         TextView Amount = findViewById(R.id.Amount);
         TextView vending_status = findViewById(R.id.vending_status);
         TextView phonenumber = findViewById(R.id.customer_name);
-//        TextView customerName = findViewById(R.id.customerName_Bind);
-        // TextView customer_address = findViewById(R.id.customerAddress_Bind);
         TextView productType = findViewById(R.id.productType);
         TextView totalamount = findViewById(R.id.totalamount);
         TextView paymentMethod = findViewById(R.id.paymentMethod);
 
         TextView pin = findViewById(R.id.pin);
         TextView service = findViewById(R.id.service);
-        //TextView quantity_text = findViewById(R.id.quantity_text);
         ImageView logo = findViewById(R.id.logo);
         alertDialogManager = new AlertDialogManager();
 
         Intent ii = getIntent();
         vendingCode.setText(ii.getStringExtra("reference"));
-        //   customer_number.setText(ii.getStringExtra("serviceId"));
         Amount.setText("N " + ii.getStringExtra("amount"));
         vending_status.setText(ii.getStringExtra("paymentStatus"));
         service.setText(ii.getStringExtra("Sname"));
 
         phonenumber.setText(ii.getStringExtra("phonenumber"));
-//        customerName.setText(ii.getStringExtra("customer_Name"));
-//        customer_address.setText(ii.getStringExtra("address"));
         productType.setText(ii.getStringExtra("productType"));
+
         totalamount.setText("N " + ii.getStringExtra("totalamount"));
         paymentMethod.setText(ii.getStringExtra("paymentMethod"));
-
+        amnt = ii.getStringExtra("totalamount");
         String ImageURL = ii.getStringExtra("Simage");
         Glide
                 .with(this)
@@ -145,21 +140,29 @@ public class PreviewEducationActivity extends AppCompatActivity {
                 }
 
                 JsonObjectRequest jsonObjReq = new JsonObjectRequest(
-                        Request.Method.POST, Constant.VENDING_DATA_COMPLETE_BY_WALLET, params,
+                        Request.Method.POST, Constant.VENDING_EDUCATION_COMPLETE_BY_WALLET, params,
                         new com.android.volley.Response.Listener<JSONObject>() {
                             @Override
                             public void onResponse(JSONObject response) {
                                 dialog.dismiss();
-                                Log.d("TAGGG", response.toString() + " i am queen");
+                                Log.d("TAGGG", response.toString());
                                 try {
                                     String statusCode = response.getString("statusCode");
                                     JSONObject object = response.getJSONObject("data");
                                     Log.d("stat", statusCode);
                                     if (statusCode.equals("200")) {
-                                        //alertDialogManager.showAlertDialog(LoginActivity.this, "success", "Account has been created successfully, a mail has been sent to your email address to validate your email address", true);
-                                        //JSONObject content = response.getJSONObject("data");
                                         JSONObject content = object.getJSONObject("standardReportingModel");
+
+                                        JSONObject transaction = object.getJSONObject("transaction");
+
+
                                         Intent ii = new Intent(PreviewEducationActivity.this, EducationCompleteActivity.class);
+                                        ii.putExtra("phonenumber", transaction.getString("phonenumber"));
+                                        ii.putExtra("description", transaction.getString("description"));
+                                        ii.putExtra("reference", transaction.getString("reference"));
+                                        ii.putExtra("settled", transaction.getString("settled"));
+
+
                                         ii.putExtra("billerCode", content.getString("billerCode"));
                                         ii.putExtra("date", content.getString("date"));
                                         ii.putExtra("transactionID", content.getString("transactionID"));
@@ -170,16 +173,17 @@ public class PreviewEducationActivity extends AppCompatActivity {
                                         ii.putExtra("logo", content.getString("logo"));
                                         ii.putExtra("message", content.getString("message"));
                                         ii.putExtra("name", content.getString("name"));
+                                        ii.putExtra("extras", content.getString("extras"));
                                         ii.putExtra("totalAmount", content.getString("totalAmount"));
                                         ii.putExtra("transactionStatus", content.getString("transactionStatus"));
                                         ii.putExtra("status", content.getBoolean("status"));
-                                        ii.putExtra("service", content.getString("service"));
+
                                         ii.putExtra("message", content.getString("message"));
                                         startActivity(ii);
 
 
                                     } else {
-                                        alertDialogManager.showAlertDialog(PreviewEducationActivity.this, "Failed", "Opps!!! Wrong username and password supplied", false);
+                                        alertDialogManager.showAlertDialog(PreviewEducationActivity.this, "Failed", "Error occurred while vending", false);
 
                                     }
                                 } catch (JSONException e) {
@@ -237,7 +241,7 @@ public class PreviewEducationActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                new RaveUiManager(PreviewEducationActivity.this).setAmount(Double.parseDouble(Amount.getText().toString()))
+                new RaveUiManager(PreviewEducationActivity.this).setAmount(Double.parseDouble(amnt))
                         .setCurrency("NGN")
                         .setEmail(model.getEmail())
                         .setfName(model.getFirstName())
@@ -314,7 +318,7 @@ public class PreviewEducationActivity extends AppCompatActivity {
                     final String vbRespcode = arr.getString("vbvrespcode");
                     final String vbrespmessage = arr.getString("vbvrespmessage");
 
-                    String vendingComplete = Constant.VENDING_DATA_COMPLETE + "/" + vendingCode.getText().toString();
+                    String vendingComplete = Constant.VENDING_EDUCATION_COMPLETE + "/" + vendingCode.getText().toString();
                     JsonObjectRequest jsonObjReq = new JsonObjectRequest(Request.Method.GET,
                             vendingComplete, null, new Response.Listener<JSONObject>() {
                         @Override
@@ -328,7 +332,17 @@ public class PreviewEducationActivity extends AppCompatActivity {
                                 String statusCode = response.getString("statusCode");
                                 if (statusCode.equals("200")) {
                                     JSONObject content = object.getJSONObject("standardReportingModel");
+
+                                    JSONObject transaction = object.getJSONObject("transaction");
+
+
                                     Intent ii = new Intent(PreviewEducationActivity.this, EducationCompleteActivity.class);
+                                    ii.putExtra("phonenumber", transaction.getString("phonenumber"));
+                                    ii.putExtra("description", transaction.getString("description"));
+                                    ii.putExtra("reference", transaction.getString("reference"));
+                                    ii.putExtra("settled", transaction.getString("settled"));
+
+
                                     ii.putExtra("billerCode", content.getString("billerCode"));
                                     ii.putExtra("date", content.getString("date"));
                                     ii.putExtra("transactionID", content.getString("transactionID"));
@@ -339,12 +353,14 @@ public class PreviewEducationActivity extends AppCompatActivity {
                                     ii.putExtra("logo", content.getString("logo"));
                                     ii.putExtra("message", content.getString("message"));
                                     ii.putExtra("name", content.getString("name"));
+                                    ii.putExtra("extras", content.getString("extras"));
                                     ii.putExtra("totalAmount", content.getString("totalAmount"));
                                     ii.putExtra("transactionStatus", content.getString("transactionStatus"));
                                     ii.putExtra("status", content.getBoolean("status"));
-                                    ii.putExtra("service", content.getString("service"));
+
                                     ii.putExtra("message", content.getString("message"));
                                     startActivity(ii);
+
 
                                 }
 

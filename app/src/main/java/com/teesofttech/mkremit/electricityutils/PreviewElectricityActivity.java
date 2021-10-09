@@ -334,23 +334,31 @@ public class PreviewElectricityActivity extends AppCompatActivity {
                                 JSONObject object = response.getJSONObject("data");
                                 String statusCode = response.getString("statusCode");
                                 if (statusCode.equals("200")) {
-                                    JSONObject content = object.getJSONObject("standardReportingModel");
+                                    JSONObject content = object.getJSONObject("transaction");
+
+                                    JSONObject userProfile = object.getJSONObject("standardReportingModel");
+
                                     Intent ii = new Intent(PreviewElectricityActivity.this, ElectricityCompletionActivity.class);
                                     ii.putExtra("billerCode", content.getString("billerCode"));
                                     ii.putExtra("date", content.getString("date"));
-                                    ii.putExtra("transactionID", content.getString("transactionID"));
+                                    ii.putExtra("desc", content.getString("description"));
+                                    ii.putExtra("email", content.getString("email"));
+                                    ii.putExtra("paid", content.getString("paid"));
+                                    ii.putExtra("settled", content.getString("settled"));
+                                    ii.putExtra("serviceId", content.getString("serviceId"));
+                                    ii.putExtra("reference", content.getString("reference"));
+                                    ii.putExtra("phonenumber", content.getString("phonenumber"));
                                     ii.putExtra("productType", content.getString("productType"));
                                     ii.putExtra("variationCode", content.getString("variationCode"));
                                     ii.putExtra("amount", content.getString("amount"));
                                     ii.putExtra("paymentMethod", content.getString("paymentMethod"));
-                                    ii.putExtra("logo", content.getString("logo"));
-                                    ii.putExtra("message", content.getString("message"));
-                                    ii.putExtra("name", content.getString("name"));
-                                    ii.putExtra("totalAmount", content.getString("totalAmount"));
-                                    ii.putExtra("transactionStatus", content.getString("transactionStatus"));
-                                    ii.putExtra("status", content.getBoolean("status"));
-                                    ii.putExtra("service", content.getString("service"));
-                                    ii.putExtra("message", content.getString("message"));
+                                    ii.putExtra("logo", object.getString("logo"));
+                                    ii.putExtra("message", response.getString("message"));
+                                    ii.putExtra("name", object.getString("name"));
+                                    ii.putExtra("totalamount", content.getString("totalamount"));
+                                    // ii.putExtra("message", object.getString("message"));
+                                    ii.putExtra("customer_Name", userProfile.getString("customerName"));
+                                    ii.putExtra("address", userProfile.getString("customerAddress"));
                                     startActivity(ii);
 
                                 } else {

@@ -63,6 +63,7 @@ public class ElectricityCompletionActivity extends AppCompatActivity {
                                         ii.putExtra("totalamount", content.getString("totalamount"));
                                         ii.putExtra("message", object.getString("message"));
                                         */
+
         TextView vendingCode = findViewById(R.id.vendingCode);
         TextView customer_number = findViewById(R.id.customer_number);
         TextView Amount = findViewById(R.id.Amount);
