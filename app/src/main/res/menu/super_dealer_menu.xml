@@ -22,5 +22,10 @@
         android:icon="@drawable/ic_baseline_account_balance_24"
         android:title="HISTORY" />
 
+    <item
+        android:id="@+id/settings"
+        android:icon="@drawable/ic_settings_white_24dp"
+        android:title="HISTORY" />
+
 
 </menu>

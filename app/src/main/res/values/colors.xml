@@ -22,7 +22,10 @@
     <color name="inactive">#C4C4C4</color>
     <color name="active">#44883e</color>
 
-
+    <!--colors for light mode-->
+    <color name="contentBodyColor">#FCFCFC</color>
+    <color name="imageBorderColor">#E01E7A</color>
+    <color name="miniTitle">#2A2E43</color>
 
 
     <color name="textPrimary">#212121</color>

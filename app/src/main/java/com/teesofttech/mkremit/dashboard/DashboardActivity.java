@@ -41,6 +41,7 @@ import com.teesofttech.mkremit.fundingutils.FundWalletActivity;
 import com.teesofttech.mkremit.fundingutils.FundingHistoryActivity;
 import com.teesofttech.mkremit.models.UserModel;
 import com.teesofttech.mkremit.profileutils.ProfileActivity;
+import com.teesofttech.mkremit.settingsutils.SettingsActivity;
 import com.teesofttech.mkremit.transactionutils.TransactionActivity;
 import com.teesofttech.mkremit.walletutils.WalletActivity;
 
@@ -189,6 +190,9 @@ public class DashboardActivity extends AppCompatActivity {
                         break;
                     case R.id.menuStar2:
                         startActivity(new Intent(DashboardActivity.this, FundingHistoryActivity.class));
+                        break;
+                    case R.id.settings:
+                        startActivity(new Intent(DashboardActivity.this, SettingsActivity.class));
                         break;
                 }
 

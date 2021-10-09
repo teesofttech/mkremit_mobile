@@ -31,6 +31,9 @@
         tools:ignore="GoogleAppIndexingWarning"
         tools:targetApi="m">
         <activity
+            android:name=".settingsutils.SettingsActivity"
+            android:exported="true" />
+        <activity
             android:name=".electricityutils.ElectricityCompletionActivity"
             android:exported="true"
             android:noHistory="true">
