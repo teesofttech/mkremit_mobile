@@ -81,7 +81,7 @@ public class PreviewElectricityActivity extends AppCompatActivity {
             abar.setHomeButtonEnabled(false);
         }
 
-        TextView vendingCode = findViewById(R.id.vendingCode);
+        vendingCode = findViewById(R.id.vendingCode);
         TextView customer_number = findViewById(R.id.customer_number);
         TextView Amount = findViewById(R.id.Amount);
         TextView vending_status = findViewById(R.id.vending_status);

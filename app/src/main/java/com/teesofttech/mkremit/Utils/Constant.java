@@ -49,7 +49,9 @@ public class Constant {
 
 
     public static String GETBANKDETAILS = Constant.Base() + "wallet/getWalletBalance";
-    public static String FUNDWALLET = Constant.Base() + "";
+    public static String FUNDWALLET = Constant.Base() + "/Wallet/fundWallet";
+
+    public static String GETTRANSACTIONS = Constant.Base() + "Transaction/getTransactionHistory";
 
 
 }

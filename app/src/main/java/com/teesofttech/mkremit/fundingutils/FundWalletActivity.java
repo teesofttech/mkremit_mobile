@@ -6,8 +6,11 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
 import android.app.ProgressDialog;
+import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Gravity;
@@ -20,10 +23,14 @@ import android.widget.Toast;
 
 import com.android.volley.AuthFailureError;
 import com.android.volley.DefaultRetryPolicy;
+import com.android.volley.NetworkError;
 import com.android.volley.NetworkResponse;
+import com.android.volley.NoConnectionError;
+import com.android.volley.ParseError;
 import com.android.volley.Request;
 import com.android.volley.Response;
 import com.android.volley.ServerError;
+import com.android.volley.TimeoutError;
 import com.android.volley.VolleyError;
 import com.android.volley.VolleyLog;
 import com.android.volley.toolbox.HttpHeaderParser;
@@ -35,16 +42,23 @@ import com.teesofttech.mkremit.R;
 import com.teesofttech.mkremit.Utils.AlertDialogManager;
 import com.teesofttech.mkremit.Utils.Constant;
 import com.teesofttech.mkremit.Utils.PrefUtils;
+import com.teesofttech.mkremit.airtimeutils.AirtimeActivity;
 import com.teesofttech.mkremit.airtimeutils.AirtimeCompletionActivity;
 import com.teesofttech.mkremit.airtimeutils.PreviewActivity;
 import com.teesofttech.mkremit.app.AppController;
 import com.teesofttech.mkremit.dashboard.DashboardActivity;
 import com.teesofttech.mkremit.models.UserModel;
 
+import org.apache.http.conn.ConnectTimeoutException;
 import org.json.JSONException;
 import org.json.JSONObject;
+import org.xmlpull.v1.XmlPullParserException;
 
 import java.io.UnsupportedEncodingException;
+import java.net.ConnectException;
+import java.net.MalformedURLException;
+import java.net.SocketException;
+import java.net.SocketTimeoutException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.HashMap;
@@ -60,6 +74,8 @@ public class FundWalletActivity extends AppCompatActivity {
     UserModel model;
     TextView vendingCode;
     ProgressDialog waitingDialog;
+    ACProgressFlower dialog;
+    com.libizo.CustomEditText amount;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -83,15 +99,15 @@ public class FundWalletActivity extends AppCompatActivity {
             abar.setHomeButtonEnabled(false);
         }
 
-        UserModel model = PrefUtils.getCurrentUser(FundWalletActivity.this);
-        ACProgressFlower dialog = new ACProgressFlower.Builder(FundWalletActivity.this)
+        model = PrefUtils.getCurrentUser(FundWalletActivity.this);
+        dialog = new ACProgressFlower.Builder(FundWalletActivity.this)
                 .direction(ACProgressConstant.DIRECT_CLOCKWISE)
                 .themeColor(Color.WHITE)
-                .text("Please wait while we vending your account...")
+                .text("Please wait...")
                 .fadeColor(Color.DKGRAY).build();
 
 
-        com.libizo.CustomEditText amount = findViewById(R.id.amount);
+        amount = findViewById(R.id.amount);
         Button btnCard = findViewById(R.id.btnContinue);
         btnCard.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -123,6 +139,8 @@ public class FundWalletActivity extends AppCompatActivity {
         waitingDialog = new ProgressDialog(this);
         waitingDialog.setTitle("Vending...");
         waitingDialog.setMessage("Please wait while we vending your account");
+
+
     }
 
     public String GetREF() {
@@ -152,7 +170,7 @@ public class FundWalletActivity extends AppCompatActivity {
                     JSONObject object = new JSONObject(message);
                     final JSONObject arr = object.getJSONObject("data");
 
-                    final String amount = arr.getString("amount");
+                    //final String amount = arr.getString("amount");
                     final String IP = arr.getString("IP");
                     final String appfee = arr.getString("appfee");
                     final String charged_amount = arr.getString("charged_amount");
@@ -165,39 +183,96 @@ public class FundWalletActivity extends AppCompatActivity {
                     final String vbRespcode = arr.getString("vbvrespcode");
                     final String vbrespmessage = arr.getString("vbvrespmessage");
 
-                    String vendingComplete = Constant.FUNDWALLET + "/" + vendingCode.getText().toString();
-                    JsonObjectRequest jsonObjReq = new JsonObjectRequest(Request.Method.GET,
-                            vendingComplete, null, new Response.Listener<JSONObject>() {
-                        @Override
-                        public void onResponse(JSONObject response) {
-                            //dialog.show();
-                            Log.d("BANK", response.toString());
-                            waitingDialog.dismiss();
 
-                            try {
-                                JSONObject object = response.getJSONObject("data");
-                                String statusCode = response.getString("statusCode");
-                                if (statusCode.equals("200")) {
-                                    JSONObject content = object.getJSONObject("standardReportingModel");
-                                    Intent ii = new Intent(FundWalletActivity.this, DashboardActivity.class);
-                                    startActivity(ii);
+                    JSONObject params = new JSONObject();
+                    try {
+                        params.put("virusCode", "");
+                        params.put("status", "completed");
+                        params.put("amount", amount.getText().toString().trim());
+                        params.put("referenceCode", model.getEmail());
+                        params.put("userId", model.getId());
+                        Log.d("params", params.toString());
+                    } catch (JSONException e) {
+                        e.printStackTrace();
+                    }
 
+                    // Make request for JSONObject
+                    JsonObjectRequest jsonObjReq = new JsonObjectRequest(
+                            Request.Method.POST, Constant.FUNDWALLET, params,
+                            new Response.Listener<JSONObject>() {
+                                @Override
+                                public void onResponse(JSONObject response) {
+                                    Log.d("RESPONSE", response.toString());
+                                    dialog.dismiss();
+                                    try {
+                                        String statusCode = response.getString("statusCode");
+                                        Log.d("stat", statusCode);
+                                        if (statusCode.equals("200")) {
+                                            //alertDialogManager.showAlertDialog(RechargeVendorsActivity.this, "Success", response.getString("message"), true);
+
+                                            Toast.makeText(FundWalletActivity.this, response.getString("message"), Toast.LENGTH_LONG).show();
+
+                                            startActivity(new Intent(FundWalletActivity.this, DashboardActivity.class));
+
+
+                                        } else {
+                                            alertDialogManager.showAlertDialog(FundWalletActivity.this, "Failed", "Initialization failed", false);
+                                        }
+                                    } catch (JSONException e) {
+                                        e.printStackTrace();
+                                    }
                                 }
-
-                            } catch (JSONException e) {
-                                e.printStackTrace();
-                            }
-                            // progressDialog.dismiss();
-                            waitingDialog.dismiss();
-                        }
-                    }, new Response.ErrorListener() {
-
+                            }, new Response.ErrorListener() {
                         @Override
                         public void onErrorResponse(VolleyError error) {
-                            Toast.makeText(FundWalletActivity.this, "Error occurred while vending", Toast.LENGTH_LONG).show();
+                            dialog.dismiss();
+                            if (error instanceof NoConnectionError) {
+                                ConnectivityManager cm = (ConnectivityManager) getApplicationContext()
+                                        .getSystemService(Context.CONNECTIVITY_SERVICE);
+                                NetworkInfo activeNetwork = null;
+                                if (cm != null) {
+                                    activeNetwork = cm.getActiveNetworkInfo();
+                                }
+                                if (activeNetwork != null && activeNetwork.isConnectedOrConnecting()) {
+                                    Toast.makeText(getApplicationContext(), "Server is not connected to internet.",
+                                            Toast.LENGTH_SHORT).show();
+                                } else {
+                                    Toast.makeText(getApplicationContext(), "Your device is not connected to internet.",
+                                            Toast.LENGTH_SHORT).show();
+                                }
+                            } else if (error instanceof NetworkError || error.getCause() instanceof ConnectException
+                                    || (error.getCause().getMessage() != null
+                                    && error.getCause().getMessage().contains("connection"))) {
+                                Toast.makeText(getApplicationContext(), "Your device is not connected to internet.",
+                                        Toast.LENGTH_SHORT).show();
+                            } else if (error.getCause() instanceof MalformedURLException) {
+                                Toast.makeText(getApplicationContext(), "Bad Request.", Toast.LENGTH_SHORT).show();
+                            } else if (error instanceof ParseError || error.getCause() instanceof IllegalStateException
+                                    || error.getCause() instanceof JSONException
+                                    || error.getCause() instanceof XmlPullParserException) {
+                                Toast.makeText(getApplicationContext(), "Parse Error (because of invalid json or xml).",
+                                        Toast.LENGTH_SHORT).show();
+                            } else if (error.getCause() instanceof OutOfMemoryError) {
+                                Toast.makeText(getApplicationContext(), "Out Of Memory Error.", Toast.LENGTH_SHORT).show();
+                            } else if (error instanceof AuthFailureError) {
+                                Toast.makeText(getApplicationContext(), "server couldn't find the authenticated request.",
+                                        Toast.LENGTH_SHORT).show();
+                            } else if (error instanceof ServerError || error.getCause() instanceof ServerError) {
+                                Toast.makeText(getApplicationContext(), "Server is not responding.", Toast.LENGTH_SHORT).show();
+                            } else if (error instanceof TimeoutError || error.getCause() instanceof SocketTimeoutException
+                                    || error.getCause() instanceof ConnectTimeoutException
+                                    || error.getCause() instanceof SocketException
+                                    || (error.getCause().getMessage() != null
+                                    && error.getCause().getMessage().contains("Connection timed out"))) {
+                                Toast.makeText(getApplicationContext(), "Connection timeout error",
+                                        Toast.LENGTH_SHORT).show();
+                            } else {
+                                Toast.makeText(getApplicationContext(), "An unknown error occurred.",
+                                        Toast.LENGTH_SHORT).show();
+                            }
+
                             VolleyLog.d("TAGGG", "Error: " + error.getMessage());
                             // As of f605da3 the following should work
-                            waitingDialog.dismiss();
                             NetworkResponse response = error.networkResponse;
                             if (error instanceof ServerError && response != null) {
                                 try {
@@ -207,7 +282,6 @@ public class FundWalletActivity extends AppCompatActivity {
                                     JSONObject obj = new JSONObject(res);
                                     Log.d("error", obj.getString("message"));
                                     Toast.makeText(FundWalletActivity.this, obj.getString("message"), Toast.LENGTH_LONG).show();
-
                                 } catch (UnsupportedEncodingException e1) {
                                     // Couldn't properly decode data to string
                                     e1.printStackTrace();
@@ -216,26 +290,20 @@ public class FundWalletActivity extends AppCompatActivity {
                                     e2.printStackTrace();
                                 }
                             }
+
                         }
-
-
                     }) {
 
                         /**
                          * Passing some request headers
                          */
-                        @Override
-                        public Map<String, String> getHeaders() throws AuthFailureError {
-                            HashMap<String, String> headers = new HashMap<String, String>();
-                            headers.put("Content-Type", "application/json; charset=utf-8");
-                            // headers.put("Authorization", "Bearer " + model.getToken());
-                            Log.d("TAG", "getHeaders: " + headers.toString());
-                            return headers;
-                        }
+
                     };
+
                     DefaultRetryPolicy retryPolicy = new DefaultRetryPolicy(0, -1, DefaultRetryPolicy.DEFAULT_BACKOFF_MULT);
                     jsonObjReq.setRetryPolicy(retryPolicy);
                     AppController.getInstance().addToRequestQueue(jsonObjReq);
+
 
                 } catch (JSONException e) {
                     e.printStackTrace();
