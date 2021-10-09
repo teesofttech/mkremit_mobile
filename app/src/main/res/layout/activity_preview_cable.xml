@@ -68,7 +68,10 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/linear1"
-                android:layout_margin="16dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginBottom="16dp"
                 android:background="@drawable/rect"
                 android:orientation="vertical">
 
@@ -110,45 +113,6 @@
                     android:layout_height="1dp"
                     android:background="@color/colordevider" />
 
-
-                <!--******bag total********-->
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal">
-
-
-                    <TextView
-                        android:id="@+id/bagdiscount"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:background="#0000"
-                        android:gravity="left"
-                        android:padding="16dp"
-                        android:text="Network:"
-                        android:textColor="@color/textSub"
-                        android:textSize="@dimen/text" />
-
-
-                    <TextView
-                        android:id="@+id/customer_number"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:background="#0000"
-                        android:gravity="right"
-                        android:padding="16dp"
-                        android:text="0"
-                        android:textColor="@color/Tex"
-                        android:textSize="@dimen/text" />
-                </LinearLayout>
-
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="1dp"
-                    android:background="@color/colordevider" />
-
                 <!--****** total********-->
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -181,6 +145,47 @@
                         android:textColor="@color/Tex"
                         android:textSize="@dimen/text" />
                 </LinearLayout>
+
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/colordevider" />
+
+
+                <!--******bag total********-->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+
+                    <TextView
+                        android:id="@+id/bagdiscount"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="#0000"
+                        android:gravity="left"
+                        android:padding="16dp"
+                        android:text="Plan:"
+                        android:textColor="@color/textSub"
+                        android:textSize="@dimen/text" />
+
+
+                    <TextView
+                        android:id="@+id/plan"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="#0000"
+                        android:gravity="right"
+                        android:padding="16dp"
+                        android:text="0"
+                        android:textColor="@color/Tex"
+                        android:textSize="@dimen/text" />
+                </LinearLayout>
+
 
                 <View
                     android:layout_width="match_parent"
@@ -284,7 +289,84 @@
 
 
                     <TextView
+                        android:id="@+id/phonenumber"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="#0000"
+                        android:gravity="right"
+                        android:padding="16dp"
+                        android:text="N/A"
+                        android:textColor="@color/green"
+                        android:textSize="@dimen/text" />
+                </LinearLayout>
+
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/colordevider" />
+
+                <!--******sub total********-->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+
+                    <TextView
+                        android:id="@+id/customerName"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="#0000"
+                        android:gravity="left"
+                        android:padding="16dp"
+                        android:text="Customer Name"
+                        android:textColor="@color/textSub"
+                        android:textSize="@dimen/text" />
+
+
+                    <TextView
                         android:id="@+id/customer_name"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="#0000"
+                        android:gravity="right"
+                        android:padding="16dp"
+                        android:text="N/A"
+                        android:textColor="@color/green"
+                        android:textSize="@dimen/text" />
+                </LinearLayout>
+
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/colordevider" />
+
+                <!--******sub total********-->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="#0000"
+                        android:gravity="left"
+                        android:padding="16dp"
+                        android:text="Customer Address"
+                        android:textColor="@color/textSub"
+                        android:textSize="@dimen/text" />
+
+
+                    <TextView
+                        android:id="@+id/customer_addresss"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"

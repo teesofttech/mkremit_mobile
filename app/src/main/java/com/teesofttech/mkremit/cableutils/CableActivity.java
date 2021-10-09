@@ -14,6 +14,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.Gravity;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -44,6 +45,7 @@ import com.teesofttech.mkremit.Utils.Constant;
 import com.teesofttech.mkremit.Utils.PrefUtils;
 import com.teesofttech.mkremit.airtimeutils.AirtimeActivity;
 import com.teesofttech.mkremit.app.AppController;
+import com.teesofttech.mkremit.educationutils.EducationActivity;
 import com.teesofttech.mkremit.electricityutils.ElectricityActivity;
 import com.teesofttech.mkremit.electricityutils.PreviewElectricityActivity;
 import com.teesofttech.mkremit.models.ServiceVendor;
@@ -74,11 +76,11 @@ public class CableActivity extends AppCompatActivity {
             "STARTIMES",
     };
 
-    private static final String[] Items = {
-            "Select One",
-            "Prepaid",
-            "PostPaid"
-    };
+    //    private static final String[] Items = {
+//            "Select One",
+//            "Prepaid",
+//            "PostPaid"
+//    };
     AlertDialogManager alertDialogManager;
     ImageView image;
 
@@ -95,7 +97,7 @@ public class CableActivity extends AppCompatActivity {
     ArrayList<String> vendorname;
     //ArrayList<vendModel> ServiceType;
     Spinner materialSpinner, materialSpinnerType;
-    com.jaredrummler.materialspinner.MaterialSpinner material_spinner_type;
+    Spinner material_spinner_type;
     Object plan;
 
     @Override
@@ -120,17 +122,18 @@ public class CableActivity extends AppCompatActivity {
         }
         com.jaredrummler.materialspinner.MaterialSpinner spinner = (com.jaredrummler.materialspinner.MaterialSpinner) findViewById(R.id.material_spinner_1);
         spinner.setItems(Airitime);
+
         image = findViewById(R.id.image);
         progressDialog = new ProgressDialog(this);
         alertDialogManager = new AlertDialogManager();
         vendorname = new ArrayList<>();
-        material_spinner_type = (com.jaredrummler.materialspinner.MaterialSpinner) findViewById(R.id.material_spinner_type);
-        material_spinner_type.setItems(Items);
+
+        materialSpinnerType = (Spinner) findViewById(R.id.material_spinner_type);
 
         cartList = new ArrayList<>();
         model = PrefUtils.getCurrentUser(CableActivity.this);
         com.libizo.CustomEditText amount = (com.libizo.CustomEditText) findViewById(R.id.amount);
-        com.libizo.CustomEditText meterNumber = (com.libizo.CustomEditText) findViewById(R.id.meterNumber);
+        com.libizo.CustomEditText billerCode = (com.libizo.CustomEditText) findViewById(R.id.billerCode);
 
         spinner.setOnItemSelectedListener(new MaterialSpinner.OnItemSelectedListener<String>() {
             @Override
@@ -150,12 +153,20 @@ public class CableActivity extends AppCompatActivity {
                 fetchRecipes(network);
             }
         });
-        material_spinner_type.setOnItemSelectedListener(new MaterialSpinner.OnItemSelectedListener() {
+
+        materialSpinnerType.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
-            public void onItemSelected(MaterialSpinner view, int position, long id, Object item) {
-                // Snackbar.make(view, "Clicked " + item, Snackbar.LENGTH_LONG).show();
-                //cartList.
-                //plan = item;
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+
+                ServiceVendor serviceVendor = (ServiceVendor) materialSpinnerType.getSelectedItem();
+
+                amount.setText(serviceVendor.variationAmount);
+                plan = serviceVendor.variationCode;
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
             }
         });
 
@@ -167,15 +178,15 @@ public class CableActivity extends AppCompatActivity {
                 .fadeColor(Color.DKGRAY).build();
 
         Button btnContinue = findViewById(R.id.btnContinue);
-        //  CustomEditText phonenumber = findViewById(R.id.phonenumber);
+        CustomEditText phonenumber = findViewById(R.id.phonenumber);
         //  CustomEditText amount = findViewById(R.id.amount);
         btnContinue.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-                // String _phonenumber = phonenumber.getText().toString();
+                String _phonenumber = phonenumber.getText().toString();
                 String Amount = amount.getText().toString();
-                String _meterNumber = meterNumber.getText().toString();
+                String _billerCode = billerCode.getText().toString();
                 // dialog.show();
 
                 if (amount.getText().toString().equals("")) {
@@ -183,25 +194,14 @@ public class CableActivity extends AppCompatActivity {
                 } else {
                     JSONObject param = new JSONObject();
 
-                    /*{
-  "network": "ikeja-electric",
-  "amount": "500",
-  "email": "tundeesanju@gmail.com.ng",
-  "phoneNumber": "0101334124",
-  "userId": "eb138597-99d8-4e75-b4c5-4dc61147d5b6",
-  "dataPlan": "string",
-  "meterNumber": "0101334124",
-  "meterType": "PostPaid"
-}
-*/
                     try {
                         param.put("network", network);
-                        //param.put("phoneNumber", model.ge.trim());
+                        param.put("phoneNumber", _phonenumber);
                         param.put("amount", Amount.trim());
                         param.put("email", model.getEmail());
                         param.put("userId", model.getId());
-                        param.put("meterNumber", _meterNumber);
-                        param.put("meterType", plan.toString());
+                        param.put("dataPlan", plan);
+                        param.put("billerCode", _billerCode.toString());
                         Log.d("param", param.toString());
                     } catch (JSONException e) {
                         e.printStackTrace();
@@ -209,7 +209,7 @@ public class CableActivity extends AppCompatActivity {
                     dialog.show();
                     // Make request for JSONObject
                     JsonObjectRequest jsonObjReq = new JsonObjectRequest(
-                            Request.Method.POST, Constant.VENDING_ELECTRICITY, param,
+                            Request.Method.POST, Constant.VENDING_CABLE, param,
                             new Response.Listener<JSONObject>() {
                                 @Override
                                 public void onResponse(JSONObject response) {
@@ -219,15 +219,14 @@ public class CableActivity extends AppCompatActivity {
                                         String statusCode = response.getString("statusCode");
                                         Log.d("stat", statusCode);
                                         if (statusCode.equals("200")) {
-                                            //alertDialogManager.showAlertDialog(RechargeVendorsActivity.this, "Success", response.getString("message"), true);
                                             Toast.makeText(CableActivity.this, response.getString("message"), Toast.LENGTH_LONG).show();
 
                                             JSONObject cont = response.getJSONObject("data");
                                             JSONObject content = cont.getJSONObject("transaction");
-                                            JSONObject userProfile = cont.getJSONObject("content");
 
                                             JSONObject serviceProper = cont.getJSONObject("service");
-                                            Intent ii = new Intent(CableActivity.this, PreviewElectricityActivity.class);
+
+                                            Intent ii = new Intent(CableActivity.this, PreviewCableActivity.class);
                                             ii.putExtra("serviceId", content.getString("serviceId"));
                                             ii.putExtra("date", content.getString("date"));
                                             ii.putExtra("reference", content.getString("reference"));
@@ -246,14 +245,14 @@ public class CableActivity extends AppCompatActivity {
                                             ii.putExtra("SserviceId", serviceProper.getString("serviceId"));
                                             ii.putExtra("ScategoryId", serviceProper.getString("categoryId"));
 
-                                            ii.putExtra("customer_Name", userProfile.getString("customer_Name"));
-                                            ii.putExtra("address", userProfile.getString("address"));
+                                            ii.putExtra("customer_Name", cont.getString("customer_Name"));
+                                            ii.putExtra("address", cont.getString("address"));
 
 
                                             startActivity(ii);
 
                                         } else {
-                                            //alertDialogManager.showAlertDialog(InternetDataActivity.this, "Failed", "Initialization failed", false);
+                                            alertDialogManager.showAlertDialog(CableActivity.this, "Failed", "Initialization failed", false);
                                         }
                                     } catch (JSONException e) {
                                         e.printStackTrace();
@@ -384,31 +383,17 @@ public class CableActivity extends AppCompatActivity {
                         cartList.add(mydic);
                         vendorname.add(vend.getString("name"));
 
-                        ArrayAdapter userAdapter = new ArrayAdapter(CableActivity.this, R.layout.spinner, cartList);
-                        material_spinner_type.setAdapter(userAdapter);
-                        ;//new ArrayAdapter<ServiceVendor>(InternetDataActivity.this, android.R.layout.simple_spinner_dropdown_item, cartList));
+//                        ArrayAdapter userAdapter = new ArrayAdapter(CableActivity.this, R.layout.spinner, cartList);
+//                        material_spinner_type.setAdapter(userAdapter);
 
-                        /*JSONArray services = vend.getJSONArray("serivces");
 
-                        for (int k = 0; k < services.length(); k++) {
+                        ArrayAdapter<ServiceVendor> adapter = new ArrayAdapter<ServiceVendor>(CableActivity.this,
+                                android.R.layout.simple_spinner_item, cartList);
+                        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+                        materialSpinnerType.setAdapter(adapter);
 
-                            try {
-                                final JSONObject obj = (JSONObject) services
-                                        .get(k);
+                        materialSpinnerType.setPrompt("Select one!");
 
-                                ServiceVendor mydic = new ServiceVendor();
-                                mydic.setId(obj.getInt("id"));
-                                mydic.setVendorName(obj.getString("vendorName"));
-                                mydic.setName(obj.getString("name"));
-                                mydic.setAmount(obj.getDouble("amount"));
-                                mydic.setDescription(obj.getString("description"));
-                                cartList.add(mydic);
-
-                            } catch (JSONException e) {
-                                e.printStackTrace();
-                            }
-                        }*/
-                        //  mAdapter.notifyDataSetChanged();
 
                     }
                     // stop animating Shimmer and hide the layout

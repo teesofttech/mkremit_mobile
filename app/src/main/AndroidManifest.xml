@@ -54,7 +54,8 @@
         </activity>
         <activity
             android:name=".cableutils.CableCompleteActivity"
-            android:exported="true">
+            android:exported="true"
+            android:noHistory="true">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".cableutils.CableCompleteActivity" />
@@ -71,14 +72,16 @@
             android:exported="true" />
         <activity
             android:name=".educationutils.EducationCompleteActivity"
-            android:exported="true">
+            android:exported="true"
+            android:noHistory="true">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".educationutils.EducationCompleteActivity" />
         </activity>
         <activity
             android:name=".airtimeutils.AirtimeCompletionActivity"
-            android:exported="true">
+            android:exported="true"
+            android:noHistory="true">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".airtimeutils.AirtimeCompletionActivity" />
