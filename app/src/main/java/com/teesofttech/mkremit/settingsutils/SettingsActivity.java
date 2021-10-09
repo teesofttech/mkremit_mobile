@@ -50,7 +50,8 @@ public class SettingsActivity extends AppCompatActivity {
         }
         model = PrefUtils.getCurrentUser(SettingsActivity.this);
 
-
+        TextView fullname = findViewById(R.id.usernameTextView);
+        fullname.setText(model.getFirstName() + " " + model.getLastName());
         //function for enabling dark mode
         setDarkModeSwitch();
     }
