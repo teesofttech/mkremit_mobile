@@ -140,7 +140,7 @@ public class DashboardActivity extends AppCompatActivity {
         wallet.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(DashboardActivity.this, WalletActivity.class));
+                startActivity(new Intent(DashboardActivity.this, FundWalletActivity.class));
             }
         });
 

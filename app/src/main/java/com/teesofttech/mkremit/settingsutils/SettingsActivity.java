@@ -4,6 +4,7 @@ import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.app.AppCompatDelegate;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Gravity;
 import android.view.View;
@@ -14,8 +15,10 @@ import android.widget.TextView;
 import com.teesofttech.mkremit.R;
 import com.teesofttech.mkremit.Utils.DarkModePrefManager;
 import com.teesofttech.mkremit.Utils.PrefUtils;
+import com.teesofttech.mkremit.auth.ChangePasswordActivity;
 import com.teesofttech.mkremit.dashboard.DashboardActivity;
 import com.teesofttech.mkremit.models.UserModel;
+import com.teesofttech.mkremit.profileutils.ProfileActivity;
 
 public class SettingsActivity extends AppCompatActivity {
     private Switch darkModeSwitch;
@@ -52,6 +55,22 @@ public class SettingsActivity extends AppCompatActivity {
 
         TextView fullname = findViewById(R.id.usernameTextView);
         fullname.setText(model.getFirstName() + " " + model.getLastName());
+
+        TextView editProfile = findViewById(R.id.editProfile);
+        editProfile.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(SettingsActivity.this, ProfileActivity.class));
+            }
+        });
+
+        TextView changepassword = findViewById(R.id.changePassword);
+        editProfile.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(SettingsActivity.this, ChangePasswordActivity.class));
+            }
+        });
         //function for enabling dark mode
         setDarkModeSwitch();
     }

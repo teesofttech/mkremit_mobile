@@ -31,8 +31,11 @@
         tools:ignore="GoogleAppIndexingWarning"
         tools:targetApi="m">
         <activity
-            android:name=".settingsutils.SettingsActivity"
+            android:name=".auth.ChangePasswordActivity"
             android:exported="true" />
+        <activity
+            android:name=".settingsutils.SettingsActivity"
+            android:exported="true"></activity>
         <activity
             android:name=".electricityutils.ElectricityCompletionActivity"
             android:exported="true"
@@ -105,7 +108,11 @@
         </activity>
         <activity
             android:name=".profileutils.ProfileActivity"
-            android:exported="true" />
+            android:exported="true">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".profileutils.ProfileActivity" />
+        </activity>
         <activity
             android:name=".walletutils.WalletActivity"
             android:exported="true">

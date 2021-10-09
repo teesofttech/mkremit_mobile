@@ -26,8 +26,8 @@
                 android:layout_height="60dp"
                 android:layout_marginTop="15dp"
                 android:layout_marginRight="10dp"
-                android:src="@drawable/user_dp"
-                app:civ_border_color="@color/imageBorderColor"
+                android:src="@mipmap/usereren"
+                app:civ_border_color="@color/white"
                 app:civ_border_width="2dp" />
 
             <TextView
@@ -65,11 +65,13 @@
             android:text="Profile" />
 
         <TextView
+            android:id="@+id/editProfile"
             style="@style/viewParent.headerText.settingsTextIcon"
             android:drawableLeft="@drawable/ic_edit_profile"
             android:text="Edit Profile" />
 
         <TextView
+            android:id="@+id/changePassword"
             style="@style/viewParent.headerText.settingsTextIcon"
             android:layout_marginTop="10dp"
             android:drawableLeft="@drawable/ic_edit_password"

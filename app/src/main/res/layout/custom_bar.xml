@@ -14,6 +14,7 @@
         android:text="PROFILE"
         android:textStyle="bold"
         android:textColor="@color/white"
+        android:fontFamily="@font/avenirroman"
         android:textSize="20sp"
         />
 
