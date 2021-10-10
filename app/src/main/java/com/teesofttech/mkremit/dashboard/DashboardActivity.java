@@ -41,6 +41,7 @@ import com.teesofttech.mkremit.fundingutils.FundWalletActivity;
 import com.teesofttech.mkremit.fundingutils.FundingHistoryActivity;
 import com.teesofttech.mkremit.models.UserModel;
 import com.teesofttech.mkremit.profileutils.ProfileActivity;
+import com.teesofttech.mkremit.sendmoneyutils.SendMoneyActivity;
 import com.teesofttech.mkremit.settingsutils.SettingsActivity;
 import com.teesofttech.mkremit.transactionutils.TransactionActivity;
 import com.teesofttech.mkremit.walletutils.WalletActivity;
@@ -140,7 +141,7 @@ public class DashboardActivity extends AppCompatActivity {
         wallet.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(DashboardActivity.this, FundWalletActivity.class));
+                startActivity(new Intent(DashboardActivity.this, SendMoneyActivity.class));
             }
         });
 

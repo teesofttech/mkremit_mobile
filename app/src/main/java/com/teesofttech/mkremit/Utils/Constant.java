@@ -53,5 +53,6 @@ public class Constant {
     public static String GETWALLETHISTORY = Constant.Base() + "Wallet/getWalletByUserId";
     public static String GETTRANSACTIONS = Constant.Base() + "Transaction/getTransactionHistory";
 
+    public static String SENDMONEY = Constant.Base() + "Wallet/initiatie-bank-transfer";
 
 }

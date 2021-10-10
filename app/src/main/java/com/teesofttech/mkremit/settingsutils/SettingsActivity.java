@@ -65,7 +65,7 @@ public class SettingsActivity extends AppCompatActivity {
         });
 
         TextView changepassword = findViewById(R.id.changePassword);
-        editProfile.setOnClickListener(new View.OnClickListener() {
+        changepassword.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(SettingsActivity.this, ChangePasswordActivity.class));

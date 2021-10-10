@@ -360,10 +360,9 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center"
-
                                 android:gravity="center"
                                 android:padding="2dp"
-                                android:text="Wallet"
+                                android:text="Send Money"
                                 android:textColor="@color/colorPrimaryDark"
                                 android:textSize="16sp"
                                 android:textStyle="bold" />

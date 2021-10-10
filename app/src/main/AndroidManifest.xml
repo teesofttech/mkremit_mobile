@@ -31,11 +31,21 @@
         tools:ignore="GoogleAppIndexingWarning"
         tools:targetApi="m">
         <activity
+            android:name=".sendmoneyutils.SendMoneyPreviewActivity"
+            android:exported="true" />
+        <activity
+            android:name=".sendmoneyutils.SendMoneyActivity"
+            android:exported="true" />
+        <activity
             android:name=".auth.ChangePasswordActivity"
             android:exported="true" />
         <activity
             android:name=".settingsutils.SettingsActivity"
-            android:exported="true"></activity>
+            android:exported="true">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".settingsutils.SettingsActivity" />
+        </activity>
         <activity
             android:name=".electricityutils.ElectricityCompletionActivity"
             android:exported="true"
